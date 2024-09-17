@@ -27,11 +27,8 @@ main {
     background-color: beige;
 }
 
-footer {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-}
-
 footer p {
-    grid-column: 2;
+    position: absolute;
+    text-align: center;
+    bottom: 100%;
 }
