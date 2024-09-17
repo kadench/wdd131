@@ -1,0 +1,211 @@
+/* Initially show only elements with .invisible-p class */
+
+
+/* Defining CSS variables for universal use */
+:root {
+    --h1-font-size: 18px;
+    --h3-font-size: 16px;
+    --p-font-size: 14px;
+    --gray: rgba(118, 118, 118, 0.3);
+    --dark-gray: rgba(63, 63, 63, .4);
+    --light-gray: rgba(165, 165, 165, 0.286);
+    
+}
+
+/* Making everything line up to the very edge of the page */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+/* Giving header a background color */
+
+header {
+    background-color: var(--dark-gray);
+    margin: 1rem 1rem 0rem 1rem;
+}
+
+/* h1 Style to the middle of the screen and more appealing */
+h1.main-title {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    padding: .7rem;
+}
+
+
+/* Giving space on the left and right of the table header paragraphs.  */
+.table-header {
+    padding: .2rem;
+    background-color: var(--gray);
+    margin: 0 2rem 0 2rem;
+}
+
+/* Aligning the table content with the rest of the table */
+
+/* Container for the two side-by-side divs */
+.table-container {
+    display: flex;
+    margin: 0 -1rem; /* Negative margin to counteract the margins for the inner divs */
+}
+
+/* Making the table title look like the table content */
+/* Container for the two side-by-side divs */
+
+.table-title-container {
+    display: flex;
+    margin: 0 1rem;
+    background-color: var(--gray);
+}
+
+/* Left div taking 50% of the screen width with 1rem left margin */
+.left-title {
+    height: 100%;
+    width: 50%; /* Takes up 50% of the available space */
+    padding: 0 2rem 0 2rem; 
+    text-align: center;
+}
+
+/* Right div taking 50% of the screen width with 1rem right margin */
+.right-title {
+    height: 100%;
+    width: 50%; /* Takes up 50% of the available space */
+    padding: 0 2rem 0 2rem; 
+    text-align: center;
+}
+
+/* Left div taking 50% of the screen width with 1rem left margin */
+.left-div {
+    width: 50%; /* Takes up 50% of the available space */
+    margin-left: 2rem; /* 1rem left margin */
+    background-color: var(--gray);
+    padding: 0;
+    text-align: center;
+}
+
+/* Right div taking 50% of the screen width with 1rem right margin */
+.right-div {
+    width: 50%; /* Takes up 50% of the available space */
+    margin-right: 2rem; /* 1rem right margin */
+    background-color: var(--gray);
+    padding: 0;
+    text-align: center;
+}
+
+a:link {
+    text-decoration: none;
+    color: #0077B6;
+}
+
+a:visited {
+    color: #b60098;
+    text-decoration: double;
+}
+
+a:hover {
+    color: #0099E0;
+    text-decoration: underline;
+}
+
+/* Styling each table cell as a table cell  */
+.table-content {
+    padding: .2rem;
+    font-size: var(--p-font-size);
+    background-color: white;
+    border: .3px solid black;
+    
+}
+
+
+.table-title-text {
+    font-size: var(--p-font-size);
+    text-align: center;
+}
+
+.gray {
+    background-color: var(--light-gray);
+}
+
+/* For white background */
+.white-complete {
+    color: #008000; /* Green for "Complete" on white background */
+}
+
+.white-help {
+    color: #FF3333; /* Red for "Help Needed" on white background */
+}
+
+.white-in-progress {
+    color: #e09916; /* Dark gray for "In Progress" on white background */
+}
+
+/* For --light-gray background */
+.gray-complete {
+    color: #008000; /* Green for "Complete" on gray background */
+}
+
+.gray-help {
+    color: #FF3333; /* Red for "Help Needed" on gray background */
+}
+
+.gray-in-progress {
+    color: #b8712f; /* Dark gray for "In Progress" on gray background */
+}
+
+p.footer-p {
+    margin: .2rem 0 0 1rem;
+    font-size: var(--p-font-size);
+    color: rgb(255, 0, 0);
+    width: calc(100% - 2rem);
+
+}
+
+.invisible-p, .invisible-h3, .invisible-img {
+    display: none;
+}
+
+@media screen and (max-width: 427px) {
+    p.footer-p {
+        margin: .2rem 0 0 1rem;
+        font-size: var(--p-font-size);
+        color: rgb(255, 0, 0);
+        width: calc(100% - 2rem);
+        text-align: center;
+    }
+}
+
+/* Show .invisible-p when screen width is 350px or below */
+@media screen and (max-width: 423px) {
+    header, main, footer p.footer-p {
+        display: none;
+    }
+    
+    .invisible-h3 {
+        display: block;
+        padding-top: .5em;
+        margin: .4em;
+        font-size: var(--h3-font-size);
+        font-weight: 600;
+        color: red;
+        text-align: center;
+    }
+    
+    .invisible-p {
+        display: block;
+        margin: .9em;
+        font-size: var(--p-font-size);
+        font-weight: 500;
+        color: red;
+        text-align: center;
+    }
+
+    .invisible-img {
+        display: block;
+        width: 100px;
+        padding: auto;
+        margin: auto;
+    }
+    
+}
