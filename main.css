@@ -137,7 +137,7 @@ a:hover {
     color: #FF3333; /* Red for "Help Needed" on white background */
 }
 
-.white-in-progress {
+.white-progress {
     color: #e09916; /* Dark gray for "In Progress" on white background */
 }
 
@@ -150,7 +150,7 @@ a:hover {
     color: #FF3333; /* Red for "Help Needed" on gray background */
 }
 
-.gray-in-progress {
+.gray-progress {
     color: #b8712f; /* Dark gray for "In Progress" on gray background */
 }
 
