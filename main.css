@@ -49,7 +49,6 @@ h1.main-title {
 /* Container for the two side-by-side divs */
 .table-container {
     display: flex;
-    margin: 0 -1rem; /* Negative margin to counteract the margins for the inner divs */
 }
 
 /* Making the table title look like the table content */
@@ -64,7 +63,7 @@ h1.main-title {
 /* Left div taking 50% of the screen width with 1rem left margin */
 .left-title {
     height: 100%;
-    width: 50%; /* Takes up 50% of the available space */
+    width: 50%;
     padding: 0 2rem 0 2rem; 
     text-align: center;
 }
@@ -72,15 +71,15 @@ h1.main-title {
 /* Right div taking 50% of the screen width with 1rem right margin */
 .right-title {
     height: 100%;
-    width: 50%; /* Takes up 50% of the available space */
+    width: 50%;
     padding: 0 2rem 0 2rem; 
     text-align: center;
 }
 
 /* Left div taking 50% of the screen width with 1rem left margin */
 .left-div {
-    width: 50%; /* Takes up 50% of the available space */
-    margin-left: 2rem; /* 1rem left margin */
+    width: 100%;
+    margin-left: 1rem;
     background-color: var(--blue);
     padding: 0;
     text-align: center;
@@ -88,8 +87,8 @@ h1.main-title {
 
 /* Right div taking 50% of the screen width with 1rem right margin */
 .right-div {
-    width: 50%; /* Takes up 50% of the available space */
-    margin-right: 2rem; /* 1rem right margin */
+    width: 100%;
+    margin-right: 1rem;
     background-color: var(--blue);
     padding: 0;
     text-align: center;
@@ -97,17 +96,17 @@ h1.main-title {
 
 a:link {
     text-decoration: none;
-    color: #0077B6;
+    color: rgb(60, 94, 206);
 }
 
 a:visited {
-    color: #b60098;
-    text-decoration: double;
+    color: #ad396e;
 }
 
 a:hover {
-    color: #0099E0;
+    color: #197569;
     text-decoration: underline;
+
 }
 
 /* Styling each table cell as a table cell  */
@@ -123,6 +122,8 @@ a:hover {
 .table-title-text {
     font-size: var(--p-font-size);
     text-align: center;
+    overflow-wrap: break-word;
+    padding: 0;
 }
 
 .blue {
@@ -171,11 +172,6 @@ a:hover {
     content: "Help Needed";
 }
 
-p.footer-p {
-    margin: .2rem 0 0 1rem;
-    font-size: var(--p-font-size);
-    color: var(--notice-blue);
-}
 
 /* For white background */
 .white-complete {
@@ -203,50 +199,14 @@ p.footer-p {
     color: #b8712f; /* Dark gray for "In Progress" on gray background */
 }
 
-.invisible-p, .invisible-h3, .invisible-img {
-    display: none;
+.footer-p {
+    margin: .3rem 1rem;
+    font-size: var(--p-font-size);
+    color: var(--notice-blue);
 }
 
-@media screen and (max-width: 427px) {
-    p.footer-p {
-        margin: .2rem 0 0 1rem;
-        font-size: var(--p-font-size);
-        color: var(--notice-blue);
-        width: calc(100% - 2rem);
+@media screen and (max-width: 425px) {
+    .footer-p {
         text-align: center;
     }
-}
-
-/* Show .invisible-p when screen width is 350px or below */
-@media screen and (max-width: 327px) {
-    header, main, footer p.footer-p {
-        display: none;
-    }
-    
-    .invisible-h3 {
-        display: block;
-        padding-top: .5em;
-        margin: .4em;
-        font-size: var(--h3-font-size);
-        font-weight: 600;
-        color: var(--notice-blue);
-        text-align: center;
-    }
-    
-    .invisible-p {
-        display: block;
-        margin: .9em;
-        font-size: var(--p-font-size);
-        font-weight: 500;
-        color: var(--notice-blue);
-        text-align: center;
-    }
-
-    .invisible-img {
-        display: block;
-        width: 100px;
-        padding: auto;
-        margin: auto;
-    }
-    
 }
