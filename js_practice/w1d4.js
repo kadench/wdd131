@@ -1,0 +1,6 @@
+[]
+{}
+''
+""
+`some string`
+typeof shows 
