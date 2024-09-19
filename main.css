@@ -6,9 +6,10 @@
     --h1-font-size: 18px;
     --h3-font-size: 16px;
     --p-font-size: 14px;
-    --gray: rgba(118, 118, 118, 0.3);
-    --dark-gray: rgba(63, 63, 63, .4);
-    --light-gray: rgba(165, 165, 165, 0.286);
+    --blue: #95bbcf;
+    --dark-blue: #628395;
+    --table-blue: #bcd6e4;
+    --notice-blue: #0c6ae6;
     
 }
 
@@ -24,7 +25,7 @@
 /* Giving header a background color */
 
 header {
-    background-color: var(--dark-gray);
+    background-color: var(--dark-blue);
     margin: 1rem 1rem 0rem 1rem;
 }
 
@@ -39,7 +40,7 @@ h1.main-title {
 /* Giving space on the left and right of the table header paragraphs.  */
 .table-header {
     padding: .2rem;
-    background-color: var(--gray);
+    background-color: var(--blue);
     margin: 0 2rem 0 2rem;
 }
 
@@ -57,7 +58,7 @@ h1.main-title {
 .table-title-container {
     display: flex;
     margin: 0 1rem;
-    background-color: var(--gray);
+    background-color: var(--blue);
 }
 
 /* Left div taking 50% of the screen width with 1rem left margin */
@@ -80,7 +81,7 @@ h1.main-title {
 .left-div {
     width: 50%; /* Takes up 50% of the available space */
     margin-left: 2rem; /* 1rem left margin */
-    background-color: var(--gray);
+    background-color: var(--blue);
     padding: 0;
     text-align: center;
 }
@@ -89,7 +90,7 @@ h1.main-title {
 .right-div {
     width: 50%; /* Takes up 50% of the available space */
     margin-right: 2rem; /* 1rem right margin */
-    background-color: var(--gray);
+    background-color: var(--blue);
     padding: 0;
     text-align: center;
 }
@@ -124,8 +125,56 @@ a:hover {
     text-align: center;
 }
 
-.gray {
-    background-color: var(--light-gray);
+.blue {
+    background-color: var(--light-blue);
+}
+
+/* For white background */
+.white-complete::before {
+    color: #008000;
+    content: "Complete";
+}
+
+.white-nstart::before {
+    color: #da0d0d; 
+    content: "Not Started";
+}
+
+.white-help::before {
+    color: #8831b4;
+    content: "Help Needed";
+}
+
+.white-progress::before {
+    color: #e09916;
+    content: "In Progress";
+}
+
+/* For --light-blue background */
+.blue-complete::before {
+    color: #008000;
+    content: "Complete";
+}
+
+.blue-nstart::before {
+    color: #be1a1a; 
+    content: "Not Started";
+}
+
+.blue-progress::before {
+    color: #b8712f;
+    content: "In Progress";
+}
+
+.blue-help::before {
+    color: #8526b4;
+    content: "Help Needed";
+}
+
+p.footer-p {
+    margin: .2rem 0 0 1rem;
+    font-size: var(--p-font-size);
+    color: var(--notice-blue);
 }
 
 /* For white background */
@@ -137,29 +186,21 @@ a:hover {
     color: #FF3333; /* Red for "Help Needed" on white background */
 }
 
-.white-progress {
+.white-in-progress {
     color: #e09916; /* Dark gray for "In Progress" on white background */
 }
 
 /* For --light-gray background */
-.gray-complete {
+.blue-complete {
     color: #008000; /* Green for "Complete" on gray background */
 }
 
-.gray-help {
+.blue-help {
     color: #FF3333; /* Red for "Help Needed" on gray background */
 }
 
-.gray-progress {
+.blue-in-progress {
     color: #b8712f; /* Dark gray for "In Progress" on gray background */
-}
-
-p.footer-p {
-    margin: .2rem 0 0 1rem;
-    font-size: var(--p-font-size);
-    color: rgb(255, 0, 0);
-    width: calc(100% - 2rem);
-
 }
 
 .invisible-p, .invisible-h3, .invisible-img {
@@ -170,14 +211,14 @@ p.footer-p {
     p.footer-p {
         margin: .2rem 0 0 1rem;
         font-size: var(--p-font-size);
-        color: rgb(255, 0, 0);
+        color: var(--notice-blue);
         width: calc(100% - 2rem);
         text-align: center;
     }
 }
 
 /* Show .invisible-p when screen width is 350px or below */
-@media screen and (max-width: 423px) {
+@media screen and (max-width: 327px) {
     header, main, footer p.footer-p {
         display: none;
     }
@@ -188,7 +229,7 @@ p.footer-p {
         margin: .4em;
         font-size: var(--h3-font-size);
         font-weight: 600;
-        color: red;
+        color: var(--notice-blue);
         text-align: center;
     }
     
@@ -197,7 +238,7 @@ p.footer-p {
         margin: .9em;
         font-size: var(--p-font-size);
         font-weight: 500;
-        color: red;
+        color: var(--notice-blue);
         text-align: center;
     }
 
