@@ -97,9 +97,8 @@ h1.main-title {
     height: 100%;
     width: 50%;
     padding: 5px;
-    border-top: 1px solid;
-    border-right: 2px solid black;
-    border-bottom: 2px solid;
+    border-right: 1.5px solid black;
+    border-bottom: 1px solid black;
     border-left: 3px solid black;
 }
 
@@ -108,10 +107,9 @@ h1.main-title {
     width: 50%;
     height: 100%;
     padding: 5px;
-    border-top: 1px solid;
     border-right: 3px solid black;
-    border-bottom: 2px solid;
-    border-left: 2px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1.5px solid black;
 }
 
 .table-title-text {
@@ -164,42 +162,50 @@ a:hover {
 
 /* Quickly call on the status of the assignment by defining the content and color for that content*/
 .white-complete::before {
+    font-weight: 550;
     color: #008000;
     content: "Complete";
 }
 
 .white-nstart::before {
+    font-weight: 550;
     color: #da0d0d; 
-    content: "Not Started";
+    content: "Missing";
 }
 
 .white-help::before {
+    font-weight: 550;
     color: #8831b4;
     content: "Help Needed";
 }
 
 .white-progress::before {
+    font-weight: 550;
     color: #e09916;
     content: "In Progress";
 }
 
 /* For --light-blue background */
 .blue-complete::before {
+    font-weight: 550;
     color: #008000;
     content: "Complete";
 }
 
 .blue-nstart::before {
+    font-weight: 550;
     color: #be1a1a; 
-    content: "Not Started";
+    content: "Missing";
 }
 
 .blue-progress::before {
-    color: #b8712f;
+    font-weight: 550;
+    color: #a17750;
     content: "In Progress";
 }
 
 .blue-help::before {
+    font-weight: 550;
     color: #8526b4;
     content: "Help Needed";
 }
@@ -243,6 +249,7 @@ a:hover {
     margin: .3rem 1rem;
     font-size: var(--p-font-size);
     color: var(--notice-blue);
+    font-size: 15px;
 }
 
 footer {
@@ -259,16 +266,6 @@ footer {
     padding: 15px;
     color: white;
 }
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
-  }
 
 @media screen and (max-width: 425px) {
     .footnote {
