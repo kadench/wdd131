@@ -27,6 +27,8 @@
 header {
     background-color: var(--dark-blue);
     margin: 1rem 1rem 0rem 1rem;
+    border: 3px solid;
+    border-bottom: 2px solid;
 }
 
 /* h1 Style to the middle of the screen and more appealing */
@@ -67,23 +69,9 @@ h1.main-title {
 .table-title-container {
     display: flex;
     margin: 0 1rem;
+    padding: 0;
     background-color: var(--blue);
-}
-
-/* Left div taking 50% of the screen width with 1rem left margin */
-.left-title {
-    height: 100%;
-    width: 50%;
-    padding: 0 2rem 0 2rem; 
-    text-align: center;
-}
-
-/* Right div taking 50% of the screen width with 1rem right margin */
-.right-title {
-    height: 100%;
-    width: 50%;
-    padding: 0 2rem 0 2rem; 
-    text-align: center;
+    align-content: left;
 }
 
 /* Left div taking 50% of the screen width with 1rem left margin */
@@ -104,6 +92,57 @@ h1.main-title {
     text-align: center;
 }
 
+/* Left div taking 50% of the screen width with 1rem left margin */
+.left-title {
+    height: 100%;
+    width: 50%;
+    padding: 5px;
+    border-top: 1px solid;
+    border-right: 2px solid black;
+    border-bottom: 2px solid;
+    border-left: 3px solid black;
+}
+
+/* Right div taking 50% of the screen width with 1rem right margin */
+.right-title {
+    width: 50%;
+    height: 100%;
+    padding: 5px;
+    border-top: 1px solid;
+    border-right: 3px solid black;
+    border-bottom: 2px solid;
+    border-left: 2px solid black;
+}
+
+.table-title-text {
+    font-size: var(--p-font-size);
+    text-align: center;
+    overflow-wrap: break-word;
+    padding: 0;
+
+}
+
+/* Styling each table cell as a table cell  */
+.table-content {
+    padding: 5px;
+    font-size: var(--p-font-size);
+    background-color: white;
+    border: 1px solid black;   
+}
+
+.right-div > .table-content {
+    border-right: 3px solid;
+}
+
+.left-div > .table-content {
+    border-left: 3px solid;
+    
+}
+
+.bottom-cell {
+    border-bottom: 3px solid;
+}
+
 a:link {
     text-decoration: none;
     color: rgb(60, 94, 206);
@@ -119,28 +158,11 @@ a:hover {
 
 }
 
-/* Styling each table cell as a table cell  */
-.table-content {
-    padding: .2rem;
-    font-size: var(--p-font-size);
-    background-color: white;
-    border: .3px solid black;
-    
-}
-
-
-.table-title-text {
-    font-size: var(--p-font-size);
-    text-align: center;
-    overflow-wrap: break-word;
-    padding: 0;
-}
-
 .blue {
     background-color: var(--light-blue);
 }
 
-/* For white background */
+/* Quickly call on the status of the assignment by defining the content and color for that content*/
 .white-complete::before {
     color: #008000;
     content: "Complete";
@@ -182,31 +204,39 @@ a:hover {
     content: "Help Needed";
 }
 
+/* Style outside right border of the status p when the status class is changed */
 
-/* For white background */
-.white-complete {
-    color: #008000; /* Green for "Complete" on white background */
+.table-content.white-complete {
+    border-right: 3px solid #008000;
 }
 
-.white-help {
-    color: #FF3333; /* Red for "Help Needed" on white background */
+.table-content.white-nstart {
+    border-right: 3px solid #da0d0d;
 }
 
-.white-in-progress {
-    color: #e09916; /* Dark gray for "In Progress" on white background */
+.table-content.white-help {
+    border-right: 3px solid #8831b4;
 }
 
-/* For --light-gray background */
-.blue-complete {
-    color: #008000; /* Green for "Complete" on gray background */
+.table-content.white-progress {
+    border-right: 3px solid #e09916;
 }
 
-.blue-help {
-    color: #FF3333; /* Red for "Help Needed" on gray background */
+/* For --light-blue background */
+.table-content.blue-complete {
+    border-right: 3px solid #008000;
 }
 
-.blue-in-progress {
-    color: #b8712f; /* Dark gray for "In Progress" on gray background */
+.table-content.blue-nstart {
+    border-right: 3px solid #be1a1a;
+}
+
+.table-content.blue-progress {
+    border-right: 3px solid #b8712f;
+}
+
+.table-content.blue-help {
+    border-right: 3px solid #8526b4;
 }
 
 .footnote {
@@ -215,16 +245,30 @@ a:hover {
     color: var(--notice-blue);
 }
 
-.bottom-footer {
-    position: absolute;
+footer {
+    position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
-    padding: 9px 9px 13px 9px;
-    overflow: hidden;
     text-align: center;
-    color: #F2F2F2;
     background-color: var(--dark-blue);
+
 }
+
+.bottom-footer {
+    padding: 15px;
+    color: white;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+  }
 
 @media screen and (max-width: 425px) {
     .footnote {
