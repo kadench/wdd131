@@ -152,7 +152,7 @@ a:hover {
     content: "Complete";
 }
 
-.white-nstart::before {
+.white-miss::before {
     font-weight: 550;
     color: #da0d0d; 
     content: "Missing";
@@ -176,7 +176,7 @@ a:hover {
     content: "Complete";
 }
 
-.blue-nstart::before {
+.blue-miss::before {
     font-weight: 550;
     color: #be1a1a; 
     content: "Missing";
@@ -198,7 +198,7 @@ a:hover {
     border-right: 3px solid #008000;
 }
 
-.table-content.white-nstart {
+.table-content.white-miss {
     border-right: 3px solid #da0d0d;
 }
 
@@ -214,7 +214,7 @@ a:hover {
     border-right: 3px solid #008000;
 }
 
-.table-content.blue-nstart {
+.table-content.blue-miss {
     border-right: 3px solid #be1a1a;
 }
 
