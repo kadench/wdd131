@@ -2,11 +2,12 @@
     --h1-font-size: 18px;
     --h3-font-size: 16px;
     --p-font-size: 14px;
-    --blue: #95bbcf;
-    --dark-blue: #628395;
-    --table-blue: #bcd6e4;
+    --light-blue: #243a4636;
+    --blue: #2a6caa;
+    --dark-blue: #44799e;
+    --table-blue: #;
     --notice-blue: #0c6ae6;
-    --light-blue: #e0f7fa;
+    --heading-color: #fff;
 }
 
 *, *::before, *::after {
@@ -24,9 +25,11 @@ header {
 }
 
 h1.main-title {
+    color: var(--heading-color);
     text-align: center;
     font-size: var(--h1-font-size);
     padding: .7rem;
+    padding-bottom: .7%;
 }
 
 #home-link {
@@ -40,6 +43,7 @@ h1.main-title {
 }
 
 .table-header {
+    color: var(--heading-color);
     padding: .2rem;
     background-color: var(--blue);
     margin: 0 2rem 0 2rem;
