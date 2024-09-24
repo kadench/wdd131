@@ -1,17 +1,24 @@
-var tableRows = Array.from(document.querySelectorAll(".table-row"));
+const tableRows = Array.from(document.querySelectorAll(".table-row"));
 const lastTableRow = tableRows[tableRows.length - 1];
+const lastRightP = lastTableRow.querySelector(".right-div p")
+const lastLeftP = lastTableRow.querySelector(".left-div p")
+
 
 // Make sure the bottom-most table row has the correct bottom border applied.
-lastTableRow.querySelector(".left-div p").classList.add("bottom-cell");
-lastTableRow.querySelector(".right-div p").classList.add("bottom-cell");
+lastRightP.classList.add("bottom-cell");
+lastLeftP.classList.add("bottom-cell");
+
+// Add the respective border-radius to each bottom cell.
+lastRightP.classList.add("right-bottom-cell");
+lastLeftP.classList.add("left-bottom-cell");
 
 // Remove odd-indexed rows from the array
 for (let i = tableRows.length - 1; i >= 0; i--) {
     if (i % 2 === 0) {
         tableRows.splice(i, 1);
     }
-}
 
+}
 // Add "blue" as a prefix to status classes for remaining rows
 tableRows.forEach((row) => {
     // Select all <p> elements inside the row
