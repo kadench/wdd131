@@ -13,7 +13,6 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
 }
 
 header {
@@ -146,25 +145,25 @@ a:hover {
     background-color: var(--light-blue);
 }
 
-.white-complete::before {
+.complete::before {
     font-weight: 550;
     color: #008000;
     content: "Complete";
 }
 
-.white-miss::before {
+.miss::before {
     font-weight: 550;
     color: #da0d0d; 
     content: "Missing";
 }
 
-.white-help::before {
+.help::before {
     font-weight: 550;
     color: #8831b4;
     content: "Help Needed";
 }
 
-.white-progress::before {
+.progress::before {
     font-weight: 550;
     color: #e09916;
     content: "In Progress";
@@ -192,38 +191,6 @@ a:hover {
     font-weight: 550;
     color: #8526b4;
     content: "Help Needed";
-}
-
-.table-content.white-complete {
-    border-right: 3px solid #008000;
-}
-
-.table-content.white-miss {
-    border-right: 3px solid #da0d0d;
-}
-
-.table-content.white-help {
-    border-right: 3px solid #8831b4;
-}
-
-.table-content.white-progress {
-    border-right: 3px solid #e09916;
-}
-
-.table-content.blue-complete {
-    border-right: 3px solid #008000;
-}
-
-.table-content.blue-miss {
-    border-right: 3px solid #be1a1a;
-}
-
-.table-content.blue-progress {
-    border-right: 3px solid #b8712f;
-}
-
-.table-content.blue-help {
-    border-right: 3px solid #8526b4;
 }
 
 .footnote {
