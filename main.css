@@ -2,7 +2,7 @@
     --h1-font-size: 18px;
     --h3-font-size: 16px;
     --p-font-size: 14px;
-    --light-blue: #243a4636;
+    --light-gray: #243a4636;
     --dark-blue: #2a6caa;
     --blue: #44799e;
     --notice-blue: #0c6ae6;
@@ -150,8 +150,8 @@ a:hover {
     text-decoration: underline;
 }
 
-.blue {
-    background-color: var(--light-blue);
+.gray {
+    background-color: var(--light-gray);
 }
 
 .complete::before {
@@ -178,25 +178,25 @@ a:hover {
     content: "In Progress";
 }
 
-.blue-complete::before {
+.gray-complete::before {
     font-weight: 550;
     color: #008000;
     content: "Complete";
 }
 
-.blue-miss::before {
+.gray-miss::before {
     font-weight: 550;
     color: #be1a1a; 
     content: "Missing";
 }
 
-.blue-progress::before {
+.gray-progress::before {
     font-weight: 550;
     color: #a17750;
     content: "In Progress";
 }
 
-.blue-help::before {
+.gray-help::before {
     font-weight: 550;
     color: #8526b4;
     content: "Help Needed";
