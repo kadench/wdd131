@@ -108,6 +108,11 @@ a:link {
   width: 80%;
 }
 
+.gallery {
+  margin: 0 auto;
+  width: 80%;
+}
+
 figure {
   background-color: white;
   margin: 0 auto;
@@ -183,7 +188,6 @@ footer {
   .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    
   }
   
   .header-title {
@@ -191,14 +195,23 @@ footer {
   }
   
   figure {
-    width: 15em;
-    height: 15em;
+    width: 14em;
+    height: 14em;
     justify-self: center;
   }
-  
+ 
+  .gallery {
+    width: 90%;
+  }
+
   .gallery-image {
     width: 100%;
     height: fit-content;
+  }
+  
+  .viewer img {
+    width: 30em;
+    height: auto;
   }
   
   .nav-li {
@@ -217,6 +230,15 @@ footer {
     width: 18em;
     height: 18em;
     justify-self: center;
+  }
+
+  .viewer {
+    width: 80%;
+  }
+  
+  .viewer img {
+    width: 40em;
+    height: auto;
   }
   
   .gallery-image {
