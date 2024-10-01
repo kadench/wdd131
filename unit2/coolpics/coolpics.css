@@ -19,6 +19,8 @@ body {
     background-color: #ebebeb;
     font-family: var(--primary-font);
     font-size: 1.2em;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 header {
@@ -41,6 +43,11 @@ font-weight: 100;
   user-select: none;
   background-color: var(--primary-color);
   border: none;
+  padding-bottom: .2em;
+}
+
+.subtitle:hover {
+  cursor: pointer;
 }
 
 .nav-container {
@@ -126,9 +133,8 @@ figure {
 
 .gallery-image {
   margin: 0 auto;
-  width: 250px;
-  height: 250px;
   max-width: 100%;
+  height: fit-content;
   object-fit: cover;
   aspect-ratio: 1/1;
 
@@ -203,11 +209,6 @@ footer {
   .gallery {
     width: 90%;
   }
-
-  .gallery-image {
-    width: 100%;
-    height: fit-content;
-  }
   
   .viewer img {
     width: 30em;
@@ -241,11 +242,6 @@ footer {
     height: auto;
   }
   
-  .gallery-image {
-    width: 100%;
-    height: fit-content;
-  }
-  
 }
 
 @media screen and (min-width: 2560px) {
@@ -258,11 +254,6 @@ footer {
     width: 15em;
     height: 15em;
     justify-self: center;
-  }
-  
-  .gallery-image {
-    width: 100%;
-    height: fit-content;
   }
   
 }

@@ -5,7 +5,7 @@
     --light-gray: #243a4636;
     --dark-blue: #2a6caa;
     --blue: #44799e;
-    --notice-blue: #0c6ae6;
+    --notice-blue: #188c90;
     --heading-color: #fff;
 }
 
@@ -37,7 +37,6 @@ h1.main-title {
 
 #home-link:hover {
     text-decoration: none;
-    color: #202;
 }
 
 .table-header {
@@ -141,6 +140,15 @@ a:link {
     color: rgb(60, 94, 206);
 }
 
+.gray > a:link {
+    text-decoration: none;
+    color: #3451b2;
+}
+
+.gray > a:hover {
+    text-decoration: underline;
+}
+
 a:visited {
     color: #367183;
 }
@@ -205,8 +213,12 @@ a:hover {
 .footnote {
     margin: .3rem 1rem;
     font-size: var(--p-font-size);
-    color: var(--notice-blue);
-    font-size: 15px;
+    color: #0D0D0D;
+}
+
+.footnote a {
+    color: #55197A;
+    text-decoration: underline;
 }
 
 footer {

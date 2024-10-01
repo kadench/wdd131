@@ -19,7 +19,6 @@ galleryImages.forEach((image) => {
     image.addEventListener("click", ViewHandler)
 })
 
-
 function ExitModal() {
     const viewerDiv = document.querySelector(".viewer");
     viewerDiv.classList.toggle("hidden")
