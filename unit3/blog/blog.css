@@ -1,0 +1,139 @@
+
+/* Color scheme: https://coolors.co/db3a34-ffc857-333333-18464b-fcfcfc */
+:root {
+    --primary-color: #333333;
+    --secondary-color: #FFC857;
+    --accent-color1: #DB3A34;
+    --accent-color2: #18464b;
+    --text-color-white: #333333; 
+    --text-color-dark: #F2F2F2;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+/* header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    height: 60px;
+    transition: all .2s ease-in;
+}
+
+.logo-link {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+}
+
+.main-logo {
+    min-width: 5em;
+    max-width: 5em;
+    grid-column: 1;
+    align-self: center;
+}
+
+.main-nav {
+    align-content: center;
+    background-color: var(--primary-color);
+}
+
+.main-nav-list {
+    display: flex;
+    list-style-type: none;
+    justify-content: left;
+}
+
+.main-li {
+    display: flex;
+    padding: 0 2%;
+    color: var(--text-color-dark);
+}
+
+.main-li a {
+    color: var(--text-color-dark);
+    text-decoration: none;
+    justify-self: stretch;
+    flex-grow: 1;
+} */
+
+header {
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 40% auto;
+    width: 100%;
+}
+
+header a, nav {
+    margin: 0 auto;
+}
+
+header a {
+    grid-column: 1;
+    display: flex;
+    padding-left: 2em;
+}
+
+.main-logo {
+    max-width: 100%;
+    height: fit-content;
+    align-self: center;
+}
+
+nav {
+    grid-column: 2;
+    width: 100%;
+}
+
+.main-nav-list {
+    list-style-type: none;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.main-nav-list a {
+    font-size: 1.16em;
+    color: var(--text-color-dark);
+    text-decoration: none;;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 15px;
+    flex-grow: 1;
+}
+
+.main-nav-list a:hover {
+    background-color: #34666b;
+}
+
+.main-nav-list li {
+    width: 100%;
+    padding: 4% 0;
+    justify-self: center;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .main-logo {
+        content: url(images/main-logo-white.svg);
+    }
+    
+}
+
+
+
+
+

@@ -7,28 +7,57 @@
     <meta name="author" content="Kaden Hansen">
     <meta name="description" content="book catalog blog website unit 3 prove">
     <link rel="stylesheet" href="blog.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <script src="blog.js" defer></script>
+    <script src="sticky-header.js" defer></script>
 </head>
 <body>
-    <header>
-        Kids Read for Fun
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Archive</a></li>
-                <li><a href="#">Search</a></li>
+    <header class="sticky">
+        <a class="logo-link" href="index.html"><img class="main-logo" src="images/main-logo.svg" alt="home"></a>
+        <nav class="main-nav">
+            <ul class="main-nav-list">
+                <li class="main-li"><a href="#">About</a></li>
+                <li class="main-li"><a href="#">Archive</a></li>
+                <li class="main-li"><a href="#">Search</a></li>
             </ul>
         </nav>
     </header>
     <main>
-      <div class="book-metadata">
-        <section id="metadata-1">
-            
+      <div class="book-post">
+        <section class="book-metadata">
+            <ul class="metadata-info">
+                <li class="metadata-item"><img class="metadata-icon" src="images/star-icon.svg" alt=""></li>
+                <li class="metadata-item"><img class="metadata-icon" src="images/book-icon.svg" alt=""></li>
+                <li class="metadata-item"><img class="metadata-icon" src="images/calendar_icon.svg" alt=""></li>
+                <li class="metadata-item"><img class="metadata-icon" src="images/groups_icon.svg" alt=""></li>
+            </ul>
+        </section>
+        <section class="book-info">
+            <h2 class="book-title"></h2>
+            <h3 class="author"></h3>
+            <img class="book-cover-image" src="" alt="">
+            <p class="book-desc"></p>
         </section>
       </div>
-      <div class="main-book">
-
+      <div class="filter-box">
+        <form>
+            <label for="gsort">Sort:</label>
+            <input list="sort-options" id="gsort-input" name="sort">
+            <label for="gsort">Rating:</label>
+            <input list="sort-options" id="gsort-input" name="sort">
+            <label for="gsort">Author:</label>
+            <input list="sort-options" id="gsort-input" name="sort">
+            <label for="gsort">Genre:</label>
+            <input list="sort-options" id="gsort-input" name="sort">
+            <label for="gsort">Age:</label>
+            <input list="sort-options" id="gsort-input" name="sort">
+        </form>
       </div>
     </main>
 </body>
