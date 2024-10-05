@@ -7,6 +7,7 @@ const articles = [
 			'If you enjoy stories about seventh sons of seventh sons and magyk this is the book for you.',
 		imgSrc: 'https://upload.wikimedia.org/wikipedia/en/5/5f/Magkycover2.jpg',
 		imgAlt: 'Book cover for Septimus Heap 1',
+		author: 'Angie Sage',
 		ages: '10-14',
 		genre: 'Fantasy',
 		stars: '****'
@@ -20,6 +21,7 @@ const articles = [
 		imgSrc:
 			'https://books.google.com/books/content/images/frontcover/xWuyBAAAQBAJ?fife=w300',
 		imgAlt: 'Book cover for Magnus Chase 1',
+		author: 'Rick Riordan',
 		ages: '12-16',
 		genre: 'Fantasy',
 		stars: '⭐⭐⭐⭐'
