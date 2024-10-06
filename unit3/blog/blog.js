@@ -56,7 +56,7 @@ function CreateHTMLElement(articles) {
 
 PlaceElementOnPage(articles)
 
-
+// Example setup of article
 /* <article class="book-post">
         <section class="book-metadata">
             <ul class="metadata-info">
