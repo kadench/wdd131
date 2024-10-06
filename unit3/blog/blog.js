@@ -50,7 +50,6 @@ function CreateHTMLElement(articles) {
 		let description = article.description;
 		let articleHTML = `<article class="book-post"><section class="book-metadata"><ul class="metadata-info"><li class="metadata-item"><img class="metadata-icon" src="images/book-icon.svg" alt="genre metadata icon"><p class="icon-text">${genre}</p></li><li class="metadata-item"><img class="metadata-icon" src="images/calendar_icon.svg" alt="date published metadata icon"><p class="icon-text">${date}</p></li><li class="metadata-item"><img class="metadata-icon" src="images/groups_icon.svg" alt="recommended age metadata icon"><p class="icon-text">${ages}</p></li></ul></section><section class="book-info"><h2 class="book-title">${bookTitle}</h2><h3 class="author">${author} | <span>${stars}</span></h3><img class="book-cover-image" src="${bookCoverImageSrc}" alt="${bookCoverAlt}"><p class="book-desc">${description}</p></section></article>`
 		convertedHTML.push(articleHTML)
-		console.log(convertedHTML)
 	})
 	return convertedHTML
 };
