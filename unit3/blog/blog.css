@@ -48,7 +48,7 @@ header a {
     margin: 0 auto;
     max-width: 80%;
     min-width: 60%;
-    height: 80px;
+    height: 60px;
     align-self: center;
     box-sizing: border-box;
 }
@@ -68,7 +68,6 @@ nav {
 .main-nav-list a {
     width: 100%;
     padding: 4% 0;
-    font-size: 1.16em;
     color: var(--text-color-dark);
     text-decoration: none;
     justify-content: center;
@@ -84,12 +83,12 @@ nav {
 }
 
 .main-nav-list li a {
-    font-size: 1.4em;
     align-content: center;
+    font-size: 1.5em;
 }
 
 .collapsed {
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 20% 70% 10%;
 }
 
 .collapsed, .collapsed > a {
@@ -129,7 +128,39 @@ nav {
 
 .book-post {
     display: grid;
-    grid-template-columns: 25% 55% 20%;
+    grid-template-columns: 25% 75%;
+}
+
+.book-info {
+    display: grid;
+    margin-left: 4%;
+    grid-template-rows: 14.5% 10% 33% 66%;
+}
+
+.book-title {
+    grid-row: 1;
+    width: 100%;
+    margin-bottom: 3%;
+    font-size: 30px;
+}
+
+.author {
+    font-size: 20px;
+    grid-row: 2;
+}
+
+.book-cover-img {
+    grid-row: 3;
+}
+
+.book-desc {
+    grid-row: 4;
+}
+
+.metadata-info {
+    margin-left: 6%;
+    border-right: 2px solid;
+    height: 110vh;
 }
 
 .metadata-item {
@@ -139,11 +170,15 @@ nav {
 
 .metadata-item p {
     align-self: center;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .metadata-icon {
     width: 30px;
+}
+
+.icon-text {
+    padding-left: 4%;
 }
 
 form {
@@ -213,7 +248,6 @@ select option {
 @media screen and (min-width: 768px) {
     header {
         background-color: var(--text-color-dark);
-
     }
     
     .main-nav-list a {
