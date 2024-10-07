@@ -1,3 +1,6 @@
+// Note I wrote most of the logic, but I couldn't find the event listeners that would do what
+// I wanted to do. I asked ChatGPT to help me find the event listeners to trigger the reposition code.
+
 // Select the header and main content elements
 const mainContent = document.querySelector('main');
 const header = document.querySelector(".sticky");
