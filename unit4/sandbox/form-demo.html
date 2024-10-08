@@ -14,27 +14,32 @@
       <form id="checkoutForm" action="completed.html">
         <p>
         <label for="fullName">Full Name:</label>
-        <input id="fullName" type="text">
+        <input id="fullName" type="text" placeholder="Full Name">
         </p>
         <p>
         <label for="billingEmail">Email:</label>
-        <input id="billingEmail" type="email">
+        <input id="billingEmail" type="email" placeholder="Email">
         </p>
         <p>
         <label for="billingAddress">Address:</label>
-        <input id="billingAddress" type="text">
+        <input id="billingAddress" type="text" placeholder="Address Line 1">
         </p>
         <p>
         <label for="paymentMethod">Payment Method:</label>
-        <input id="paymentMethod" type="select">
+        <select name="paymentMethod">
+            <option value="default">Select One</option>
+            <option value="credit">Credit Card</option>
+            <option value="credit">Debit Card</option>
+            <option value="paypal">PayPal</option>
+        </select>
         </p>
         <p>
         <label for="cardInfo">Credit Card Number:</label>
-        <input id="cardInfo" type="text" pattern="[0-9]{16}">
+        <input id="cardInfo" type="text" pattern="[0-9]{16}" placeholder="XXXX-XXXX-XXXX-XXXX">
         </p>
         <p>
         <label for="paypalUsername">PayPal Username:</label>
-        <input id="paypalUsername" type="text">
+        <input id="paypalUsername" type="email" placeholder="example@domain.com">
         </p>
         <input type="submit">
       </form>

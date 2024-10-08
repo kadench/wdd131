@@ -20,12 +20,17 @@ function validateForm(event) {
     }
   }
   
+  function qs(selector) {
+    return document.querySelector(selector);
+  }
+
+
   function togglePaymentDetails(e) {
     // get a reference to the form. We can access all the named form inputs through the form element.
     const theForm = ;
     // we will also need the creditCardContainer and paypalUsernameContainer
-    const creditCardContainer = ;
-    const paypalContainer = ;
+    const creditCardContainer = qs("#cardInfo");
+    const paypalContainer = qs("#paypalUsername");
   
     // Hide payment containers by adding the '.hide' class to each of them
   
