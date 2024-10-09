@@ -44,6 +44,11 @@ main {
     background-color: #228226;
     cursor: pointer;
   }
+
+  #checkoutForm p textarea {
+    height: 4em;
+    padding-top: .5em
+  }
   
   .errors > p {
     border: 1px solid red;
