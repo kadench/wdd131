@@ -6,10 +6,10 @@
   
 :root {
   /* change the values below to your colors from your palette */
-  --primary-color: #E9C46A;
-  --secondary-color: #3A405A;
-  --accent1-color: #759AAB;
-  --accent2-color: #E07A5F;
+  --primary-color: #A63D40;
+  --secondary-color: #E9B872;
+  --accent1-color: #6494AA;
+  --accent2-color: #90A959;
 
   /* change the values below to your chosen font(s) */
   --heading-font: "Lato", Helvetica, sans-serif;
@@ -18,17 +18,21 @@
   /* these colors below should be chosen from among your palette colors above */
   --headline-color-on-white: var(--accent1-color);  /* headlines on a white background */ 
   --headline-color-on-color: #F2F2F2; /* headlines on a colored background */ 
-  --paragraph-color-on-white: #808080; /* paragraph text on a white background */ 
+  --paragraph-color-on-white: #151515; /* paragraph text on a white background */ 
   --paragraph-color-on-color: #F2F2F2; /* paragraph text on a colored background */ 
   --paragraph-background-color: var(--secondary-color);
-  --nav-link-color: #000;
+  --nav-link-color: #FFF;
   --nav-background-color: var(--primary-color);
   --nav-hover-link-color: #F2F2F2;
-  --nav-hover-background-color: var(--accent1-color);
+  --nav-hover-background-color: #793436;
 }
 
 
 /*  Look around below...but DON'T CHANGE ANYTHING! */
+
+* {
+  font-family: var(--paragraph-font);
+}
 
 body {
   max-width: 960px;
@@ -37,11 +41,13 @@ body {
   font-size: 18px;
   text-align: center;
 }
+
 img {
   display: block;
   margin: 0 auto;
   max-width: 300px;
 }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
   color: var(--headline-color-on-white);
@@ -52,12 +58,14 @@ hr {
   margin: 35px 0;
   background: var(--accent2-color);
 }
+
 header {
   padding: 1em;
   text-align: center;
   color: var(--headline-color-on-color);
-  background-color: var(--paragraph-background-color);
+  background-color: var(--primary-color);
 }
+
 header > h1, header > h2 {
   color: var(--headline-color-on-color);
 }
@@ -69,6 +77,10 @@ p {
   text-align: left;
 }
 
+.center {
+  text-align: center;
+}
+
 .colors {
   width: 100%;
   min-width: 350px;
@@ -76,43 +88,53 @@ p {
   text-align: center;
   font-family: var(--paragraph-font);
 }
+
 .colors th {
   background-color: #999;
 }
+
 .colors td{
   width: 25%;
   height: 3em;
 }
+
 .primary {
   background-color: var(--primary-color);
-  color: #000;
+  color: #fff;
 }
+
 .secondary {
   background-color: var(--secondary-color);
-  color: #F2F2F2;
+  color: #000;
 }
+
 .accent1 {
   background-color: var(--accent1-color);
   color: #000;
 }
+
 .accent2{
   background-color: var(--accent2-color);
   color: #000;
 }
+
 p.colored {
   background-color: var(--paragraph-background-color);
   color: var(--paragraph-color-on-color);
 }
+
 nav {
   background-color: var(--nav-background-color);
   line-height: 3em;
   text-align: center;
   font-size: 1.2em;
 }
+
 nav  {
   list-style-type: none;
   display: flex;
 }
+
 nav a {
   padding:1em;
   min-width: 120px;
@@ -120,13 +142,16 @@ nav a {
   padding: 10px;
   font-family: var(--paragraph-font);
 }
+
 nav a:link, nav a:visited {
   color: var(--nav-link-color);
 }
+
 nav a:hover {
   color: var(--nav-hover-link-color);
   background-color: var(--nav-hover-background-color);
 }
+
 .sitemap {
   font-family: var(--paragraph-font);
   display: grid;
@@ -176,29 +201,33 @@ nav a:hover {
 
 #file-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   list-style: none;
   font-family: var(--paragraph-font);
-  font-size: 1em;
+  font-size: 1.3em;
 }
 
 .file-list-item {
-  background-color: #ccc;
+  background-color: var(--accent2-color);
+  background-size: 100% 0.2em;
+  color: #151515;
   padding: 5%;
+  border-radius: 60px;
 }
 
 .file-list-item:hover {
-  background-size: 100% 0.2em;
-  background-color: #bbb;
+  background-color: #788a55;
+  border-radius: 60px;
+  color: #FFF;
+}
+
+.file-list-item:hover::after, .file-list-item:hover::before {
+  background-color: none;
 }
 
 .list-link {
   color: black;
   list-style: none;
   text-decoration: none;
- }
-
- .list-link:hover {
-  background-color: var(--accent1-color);
  }
