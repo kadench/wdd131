@@ -44,6 +44,18 @@ function submitHandler(event) {
     const exDate = new Date(exYear, exMonth);
     const currentDate = new Date();
 
+    // check credit card number
+    if (isNaN(cardNumber)) {
+        // it is not a valid number
+        title = 'Error!:';
+        msg = 'Card number is not a valid number\n';
+
+    } else if (!isCardNumberValid(cardNumber)) {
+        // it is a number, but is it valid?
+        title = 'Error!:';
+        msg = 'Card number is not a valid card number\n';
+    }
+
     // If the entered date is less than the current date.
     if (exDate < currentDate) {
         title = 'Error!:';
@@ -53,18 +65,8 @@ function submitHandler(event) {
 	// clear any previous errors
 	displayResponse('');
 
-	// check credit card number
-	if (isNaN(cardNumber) && msg === "") {
-		// it is not a valid number
-        title = 'Error!:';
-		msg = 'Card number is not a valid number\n';
-	} else if (!isCardNumberValid(cardNumber) && msg === "") {
-        // it is a number, but is it valid?
-        title = 'Error!:';
-		msg == 'Card number is not a valid card number\n';
-	}
 
-    else if (isCardNumberValid(cardNumber) && msg === "") {
+    if (isCardNumberValid(cardNumber) && msg === "") {
 
         msg = `Thanks for your order <strong>${personName}</strong>! Check your inbox for details!`
     }
