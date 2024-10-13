@@ -27,6 +27,7 @@ function DecideColors(title) {
 }
 
 function submitHandler(event) {
+    cardForm.reset()
 	event.preventDefault();
 	let msg = '';
     let title = '';
@@ -37,7 +38,7 @@ function submitHandler(event) {
     // Get the month and year from user
 	const exMonth = event.target.querySelector('[name="expiration"]').value;
 	let exYear = event.target.querySelector('[name="expirationYear"]').value;
-
+    
     // Add 2000 to the total to stop the date from going into the 1900s
     // Turn it back into a string after conversion.
     exYear = String(Number(exYear) + 2000)
