@@ -31,46 +31,55 @@ function submitHandler(event) {
 	// Access the card number via the event target
 	const cardNumber = event.target.querySelector('[name="card-number"]').value;
 	const personName = event.target.querySelector('[name="card-holder"]').value;
+    
+    // Get the month and year from user
 	const exMonth = event.target.querySelector('[name="expiration"]').value;
-	const exYear = event.target.querySelector('[name="expiration-year"]').value;
+	let exYear = event.target.querySelector('[name="expiration-year"]').value;
 
-    const exDate = new Date(exYear, exMonth, 0);
+    // Add 2000 to the total to stop the date from going into the 1900s
+    // Turn it back into a string after conversion.
+    exYear = String(Number(exYear) + 2000)
+
+    // Set the dates for comparison
+    const exDate = new Date(exYear, exMonth);
     const currentDate = new Date();
 
-    console.log(exDate, currentDate)
-
-    if (exDate <= currentDate) {
+    // If the entered date is less than the current date.
+    if (exDate < currentDate) {
         title = 'Error!:';
         msg = 'The expiration date is invalid or card is expired!'
     }
 
-	console.log(cardNumber);
 	// clear any previous errors
 	displayResponse('');
 
 	// check credit card number
-	if (isNaN(cardNumber)) {
+	if (isNaN(cardNumber) && msg === "") {
 		// it is not a valid number
         title = 'Error!:';
-		msg += 'Card number is not a valid number\n';
-	} else if (!isCardNumberValid(cardNumber)) {
+		msg = 'Card number is not a valid number\n';
+	} else if (!isCardNumberValid(cardNumber) && msg === "") {
         // it is a number, but is it valid?
         title = 'Error!:';
-		msg += 'Card number is not a valid card number\n';
+		msg == 'Card number is not a valid card number\n';
 	}
 
     else if (isCardNumberValid(cardNumber) && msg === "") {
 
-        msg = `Thanks for your order ${personName}! Check your inbox for details!`
+        msg = `Thanks for your order <strong>${personName}</strong>! Check your inbox for details!`
     }
 
 	if (msg !== '') {
         if (title === "") {
             title = "Success!:"
         }
-		// there was an error. stop the form and display the errors.
+		// Construct the HTML Response
         msg = HTMLTemplate(msg, title);
+
+        // Set the colors of the banner
         DecideColors(title);
+
+        // Display the HTML Response
 		displayResponse(msg);
 		return false;
 	}
