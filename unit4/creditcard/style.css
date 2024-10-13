@@ -29,9 +29,9 @@ input::placeholder {
 }
 
 input[type="submit"] {
+    background-color: #f3e295;
     border-radius: 10px;
-    border: 2px solid #998d70;
-    background-color: #e0d18b;
+    border: none;
     color: #424242;
     grid-column: 5;
     grid-row: 5;
@@ -42,8 +42,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    border: 2px solid #968764;
-    background-color: #b8ac78;
+    background-color: #f0e6b9ff;
     cursor: pointer;
 }
 
