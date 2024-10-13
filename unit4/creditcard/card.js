@@ -16,10 +16,12 @@ function HTMLTemplate(msg, title = "Success!:") {
 function DecideColors(title) {
     const msgDiv = document.querySelector(".message");
     if (title === "Error!:" && !msgDiv.classList.contains("error")) {
+        msgDiv.classList.remove("success");
         msgDiv.classList.add("error");
     }
     else if (title === "Success!:" && !msgDiv.classList.contains("success")) {
-        msgDiv.classList.toggle("success");
+        msgDiv.classList.remove("error");
+        msgDiv.classList.add("success");
     }
     
 }
