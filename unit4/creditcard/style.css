@@ -1,39 +1,71 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
     padding: 0;
     margin: 2%;
+    background-color: #e8bd96ff;
+    overflow-x: hidden;
 }
 
-.card-front {
+form {
     display: grid;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: repeat(4, 1fr);
-    padding: 20px 30px 0;
-    background-color: #427c0c;
-    border-radius: 6px;
-    z-index: 2;
-    width: 390px;
-    height: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card-back {
-    position: absolute;
-    top: 5%;
-    left: 20%;
-    background-color: #78856d;
-    border-radius: 6px;
-    z-index: -1;
-    width: 390px;
-    height: 250px;
+    grid-template-rows: repeat(4, 16%);
+    grid-template-columns: repeat(4, 8%);
+    width: 1100px;
+    
 }
 
 input {
     height: 2em;
     width: 100%;
+    border-radius: 6px;
+    border: 2px solid #355f57;
+    background-color: #6e8883;
+    color: #FFF;
 }
 
+input::placeholder {
+    color: #EEE;
+}
+
+input[type="submit"] {
+    border-radius: 10px;
+    border: 2px solid #998d70;
+    background-color: #e0d18b;
+    color: #424242;
+    grid-column: 5;
+    grid-row: 5;
+    width: 17%;
+    padding: 0 .5em;
+    font-size: 1em;   
+    transition: .2s;
+}
+
+input[type="submit"]:hover {
+    border: 2px solid #968764;
+    background-color: #b8ac78;
+    cursor: pointer;
+}
+
+input:focus {
+    border-color: #355f57;
+    outline: 2px solid #ddd;
+}
+
+.card-front {
+    z-index: 2;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 20px 30px 0;
+    background-color: #6CAC9F;
+    border-radius: 6px;
+    width: 390px;
+    height: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
 .total {
     padding-top: 2%;
     display: flex;
@@ -44,21 +76,120 @@ input {
     margin: 10px;
 }
 
+.img-card {
+    display: flex;
+    justify-content: right;
+}
+
 img {
     grid-column: 2;
     grid-row: 2;
     justify-self: right;
+    width: 60%;
 }
 
-.full {
+.card-number-p {
     grid-column: span 2;
+    width: 98%;
 }
 
 .card-holder-p {
     grid-column: 1;
-    grid-row: 3/4;
+    grid-row: 3;
+    max-height: 100%;
+    max-width: 60%;
+}
+
+.bottom-inputs {
+    grid-column: span 2;
+    grid-row: 3;
+    flex-direction: row;
+    width: 70%;
+
+}
+
+.expiration-p {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40% 1fr;
 }
 
 label[for="expiration"] {
-    display: flex;
+    grid-column: span 2;
+    grid-row: 1;
 }
+
+.left-input {
+    grid-column: 1;
+    grid-row: 2;
+    width: 80%;
+    justify-self: left;
+}
+
+.right-input {
+    grid-column: 2;
+    grid-row: 2;
+    width: 80%;
+    margin-left: 10px;
+    justify-content: left;
+}
+
+.card-back {
+    z-index: 1;
+    display: grid;
+    grid-column: 2;
+    grid-row: 2;
+    position: relative;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #6CAC9F;
+    border-radius: 6px;
+    width: 390px;
+    height: 250px;
+    box-sizing: border-box;
+}
+
+.black-strip {
+    grid-column: 1 / span 2;
+    margin-top: 6%;
+    height: 50px;
+    background-color: #424242;
+}
+
+.cvv-input {
+    grid-column: 2;
+    grid-row: 3;
+    width: 80%;
+    z-index: 3;
+}
+
+.message {
+    padding-left: 3%;
+    grid-column: 1/6;
+    grid-row: 6/9;
+    width: 43%;
+    height: fit-content;
+    border-radius: 20px;
+    z-index: 4;
+}
+
+.message.error {
+    background-color: #E57373;
+}
+
+.message.error h2 {
+    color: #860606;
+}
+
+.message.success {
+    background-color: #4CAF50;
+}
+
+.message.success h2 {
+    color: #053009;
+}
+
+.message p {
+    color: #424242;
+}
+
