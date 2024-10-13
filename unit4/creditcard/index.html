@@ -8,34 +8,34 @@
     <meta name="author" content="Kaden Hansen">
     <meta name="description" content="credit card form assignment unit 4">
     <title>Credit Card Form | Unit 4</title>
-    <link rel="icon" type="image/png" href="images/favicon-48x48.png" sizes="48x48" />
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
-    <link rel="shortcut icon" href="images/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="images/favicon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
     <script src="card.js" defer></script>
 </head>
 <body>
     <main>
-        <form id="cardForm" action="">
+        <form id="cardForm" action="#">
             <div class="card-front">
-                <section class="total">
+                <div class="total">
                     <p>TOTAL:</p><p>$199</p>
-                </section>
-                <section class="img-card">
+                </div>
+                <div class="img-card">
                     <img src="images/test.svg" alt="card icon">
-                </section>
+                </div>
                 <p class="card-number-p">
                     <label for="card-number">CARD NUMBER</label>
-                    <input type="text" pattern="[0-9]{16}" placeholder="1234 5678 9012 3456" name="card-number" required>
+                    <input id="card-number" type="text" pattern="[0-9]{16}" placeholder="1234 5678 9012 3456" name="card-number" required>
                 </p>
                 <p class="card-holder-p">
                     <label for="card-holder">CARD HOLDER</label>
-                    <input type="text" name="card-holder" placeholder="John Doe" pattern="[a-zA-Z\s]+" required>
+                    <input id="card-holder" type="text" name="card-holder" placeholder="John Doe" pattern="[a-zA-Z\s]+" required>
                 </p>
                 <p class="expiration-p">
                     <label for="expiration">EXPIRATION</label>
-                    <input class="left-input" type="text" name="expiration" placeholder="MM" pattern="(0?[1-9]|1[0-2])" required>
+                    <input id="expiration" class="left-input" type="text" name="expiration" placeholder="MM" pattern="(0?[1-9]|1[0-2])" required>
                     <input class="right-input" type="text" name="expiration-year" placeholder="YY" pattern="[0-9]{2}" required>
                 </p>
             </div>
@@ -43,7 +43,7 @@
                 <div class="black-strip"></div>
                 <p class="cvv-input">
                     <label for="cvv-cvc">CVC/CVV</label>
-                    <input type="text" name="cvv-cvc" placeholder="XXX" pattern="[0-9]{3,4}" required>
+                    <input id="cvv-cvc" type="text" name="cvv-cvc" placeholder="XXX" pattern="[0-9]{3,4}" required>
                 </p>
             </div>
             <input id="submitButton" type="submit">
