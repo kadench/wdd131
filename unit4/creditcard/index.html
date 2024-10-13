@@ -26,24 +26,24 @@
                     <img src="images/test.svg" alt="card icon">
                 </div>
                 <p class="card-number-p">
-                    <label for="card-number">CARD NUMBER</label>
-                    <input id="card-number" type="text" pattern="[0-9]{16}" placeholder="1234 5678 9012 3456" name="card-number" required>
+                    <label for="cardNumber">CARD NUMBER</label>
+                    <input id="cardNumber" type="text" pattern="[0-9]{16}" placeholder="1234 5678 9012 3456" name="cardNumber" required>
                 </p>
                 <p class="card-holder-p">
-                    <label for="card-holder">CARD HOLDER</label>
-                    <input id="card-holder" type="text" name="card-holder" placeholder="John Doe" pattern="[a-zA-Z\s]+" required>
+                    <label for="cardHolder">CARD HOLDER</label>
+                    <input id="cardHolder" type="text" name="cardHolder" placeholder="John Doe" pattern="[a-zA-Z\s]+" required>
                 </p>
                 <p class="expiration-p">
                     <label for="expiration">EXPIRATION</label>
                     <input id="expiration" class="left-input" type="text" name="expiration" placeholder="MM" pattern="(0?[1-9]|1[0-2])" required>
-                    <input class="right-input" type="text" name="expiration-year" placeholder="YY" pattern="[0-9]{2}" required>
+                    <input id="expirationYear" class="right-input" type="text" name="expirationYear" placeholder="YY" pattern="[0-9]{2}" required>
                 </p>
             </div>
             <div class="card-back">
                 <div class="black-strip"></div>
                 <p class="cvv-input">
-                    <label for="cvv-cvc">CVC/CVV</label>
-                    <input id="cvv-cvc" type="text" name="cvv-cvc" placeholder="XXX" pattern="[0-9]{3,4}" required>
+                    <label for="cvvCvc">CVC/CVV</label>
+                    <input id="cvvCvc" type="text" name="cvv-cvc" placeholder="XXX" pattern="[0-9]{3,4}" required>
                 </p>
             </div>
             <input id="submitButton" type="submit">

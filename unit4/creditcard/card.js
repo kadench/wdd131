@@ -31,12 +31,12 @@ function submitHandler(event) {
 	let msg = '';
     let title = '';
 	// Access the card number via the event target
-	const cardNumber = event.target.querySelector('[name="card-number"]').value;
-	const personName = event.target.querySelector('[name="card-holder"]').value;
+	const cardNumber = event.target.querySelector('[name="cardNumber"]').value;
+	const personName = event.target.querySelector('[name="cardHolder"]').value;
     
     // Get the month and year from user
 	const exMonth = event.target.querySelector('[name="expiration"]').value;
-	let exYear = event.target.querySelector('[name="expiration-year"]').value;
+	let exYear = event.target.querySelector('[name="expirationYear"]').value;
 
     // Add 2000 to the total to stop the date from going into the 1900s
     // Turn it back into a string after conversion.
