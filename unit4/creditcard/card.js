@@ -8,12 +8,12 @@ function displayResponse(msg) {
 	document.querySelector('.message').innerHTML = msg;
 }
 
-function HTMLTemplate(msg, title = "Success!:") {
+function htmlTemplate(msg, title = "Success!:") {
     return `<h2>${title}</h2>
             <p>${msg}</p>`
 }
 
-function DecideColors(title) {
+function decideColors(title) {
     const msgDiv = document.querySelector(".message");
     if (title === "Error!:" && !msgDiv.classList.contains("error")) {
         msgDiv.classList.remove("success");
@@ -78,10 +78,10 @@ function submitHandler(event) {
             title = "Success!:"
         }
 		// Construct the HTML Response
-        msg = HTMLTemplate(msg, title);
+        msg = htmlTemplate(msg, title);
 
         // Set the colors of the banner
-        DecideColors(title);
+        decideColors(title);
 
         // Display the HTML Response
 		displayResponse(msg);
