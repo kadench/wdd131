@@ -4,7 +4,7 @@
     --gray-color: #a3a3a3;
     --light-pink-color: #e9e1e1;
     --white-color: #FFFFFF;
-    --accent-color: #5394b8;
+    --accent-color: #0c7cb7;
 }
 
 body {
@@ -13,11 +13,11 @@ body {
     font-family: "Amatic SC", sans-serif;
     font-weight: 400;
     font-style: normal;
-    height: 100vh;
 }
 
 header {
     border-bottom: 1px solid;
+    margin: 0 1%;
 }
 
 img {
@@ -95,39 +95,115 @@ img {
 }
 
 main {
-    margin: 1em;
+    margin-bottom: 5em;
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     border: 2px solid;
+    border-radius: 15px;
+    margin: 1.6em;
     padding: 1.5em;
+}
+
+
+
+.tag-container {
+    display: flex;
+    width: 100%;
 }
 
 .tag {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: .9em;
+    font-size: 1.08em;
     border: 1px solid;
     width: fit-content;
     margin-top: .3em;
     padding: .4em;
 }
 
-.tag-container {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-}
+
 
 .bottom-content h1 {
-    color: var(--accent-color)
+    color: var(--accent-color);
+    font-weight: bolder;
+    font-size: 2em;
 }
 
-.fas {
-    color: #eea13d;
+footer {
+    text-align: center;
 }
 
-.fas.empty {
-    color: #696565;
+.socials {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.socials a {
+    min-width: 50px;
+    width: 5em;
+    margin-left: 3%;
+}
+
+.attribution {
+    color: var(--accent-color);
+    font-size: 1.5em;
+    text-decoration: none;
+    margin: 0 2%;
+}
+
+
+@media screen and (min-width: 375px) {
+    .bottom-content h1 {
+        font-size: 2.2em;
+    }
+    
+}
+
+@media screen and (min-width: 425px) {
+    .bottom-content h1 {
+        font-size: 2.5em;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .bottom-content h1 {
+        font-size: 3em;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    
+    .top-content img {
+        flex-wrap: wrap;
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .tag-container {
+        height: fit-content;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .bottom-content h1 {
+        font-size: 3em;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .bottom-content h1 {
+        font-size: 3em;
+    }
 }
 
 
