@@ -26,7 +26,7 @@ img {
 
 .home-link {
     display: flex;
-    max-width: 80%;
+    max-width: 100%;
     padding: 3em 4em;
     text-decoration: none;
     align-content: center;
@@ -35,7 +35,7 @@ img {
 
 .logo-img {
     max-width: 100px;
-    height: fit-content;
+    height: auto;
 }
 
 .logo-text {
