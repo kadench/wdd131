@@ -1,1 +1,134 @@
-/* saved */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+:root {
+    --gray-color: #a3a3a3;
+    --light-pink-color: #e9e1e1;
+    --white-color: #FFFFFF;
+    --accent-color: #5394b8;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: 100vh;
+}
+
+header {
+    border-bottom: 1px solid;
+}
+
+img {
+	max-width: 100%;
+}
+
+.home-link {
+    display: flex;
+    max-width: 80%;
+    padding: 3em 4em;
+    text-decoration: none;
+    align-content: center;
+    justify-content: center;
+}
+
+.logo-img {
+    max-width: 100px;
+    height: fit-content;
+}
+
+.logo-text {
+    font-size: 3.5em;
+    color: #000;
+    font-weight: 600;
+    align-self: flex-end;
+    margin: 0;
+}
+
+#recipeSearch {
+    display: flex;
+    min-height: 30px;
+    justify-content: center;
+    margin: 1em;
+}
+
+.recipe-input {
+    text-indent: .2em;
+    width: 100%;
+    height: 50px;
+    font-size: 1.3em;
+    border-radius: 15px 0 0 15px;
+    border: 1px solid;
+    border-right: none;
+    transition: .4s;
+}
+
+.recipe-input::placeholder {
+    text-indent: .2em;
+    color: #a3a3a3;
+}
+
+.recipe-input:focus {
+    outline-color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+
+.search-btn img {
+    min-width: 10px;
+    max-width: 20px;
+}
+
+.search-btn {
+    max-width: 50px;
+    min-width: 50px;
+    border: 1px solid;
+    border-radius: 0 15px 15px 0;
+    background-color: transparent;
+    transition: .4s;
+}
+
+.search-btn:hover {
+    cursor: pointer;
+    background-color: #e9e1e1;
+}
+
+main {
+    margin: 1em;
+}
+
+.card {
+    border: 2px solid;
+    padding: 1.5em;
+}
+
+.tag {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .9em;
+    border: 1px solid;
+    width: fit-content;
+    margin-top: .3em;
+    padding: .4em;
+}
+
+.tag-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.bottom-content h1 {
+    color: var(--accent-color)
+}
+
+.fas {
+    color: #eea13d;
+}
+
+.fas.empty {
+    color: #696565;
+}
+
+
+

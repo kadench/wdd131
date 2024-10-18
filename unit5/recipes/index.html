@@ -6,44 +6,73 @@
     <meta name="description" content="W D D unit 5 recipe book assignment website">
     <meta name="author" content="Kaden Hansen">
     <title>WDD131 Recipe Book Unit 5 | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="recipes.css">
 </head>
 <body>
     <header>
         <div class="home-logo">
-            <a class="home-link" href="index.html">
+            <a
+            class="home-link"
+            href="index.html">
                 <img class="logo-img" src="images/recipe-book.png" alt="recipe book main logo">
                 <p class="logo-text">
                     RECIPEBOOK
                 </p>
             </a>
         </div>
-        <form action="#">
-            <input type="text" name="q" placeholder="Find a recipe...">
+        <form id="recipeSearch" action="#">
+            <input class="recipe-input"
+                    type="text"
+                    name="q"
+                    placeholder="Find a recipe..."
+                    >
             <button class="search-btn" type="submit">
                 <img src="images/search.svg" alt="search icon">
             </button>
         </form>
     </header>
     <main>
-        <div class="main-cards">
+        <div class="card">
             <div class="top-content">
                 <img src="images/apple-crisp.jpg" alt="image of apple crisp ala mode">
-                <div class="tag-box">
-                    dessert
+                <div class="tag-container">
+                    <div class="tag">
+                        dessert
+                    </div>
+                    <div class="tag">
+                        dessert
+                    </div>
                 </div>
             </div>
             <div class="bottom-content">
                 <h1>
                     APPLE CRISP
                 </h1>
-                <section class="star-rating">
-                    ⭐⭐⭐⭐⭐
-                </section>
+                <span
+                    class="rating"
+                    role="img"
+                    aria-label="Rating: 4 out of 5 stars">
+                    <span aria-hidden="true" class="fas fa-star"></span>
+                    <span aria-hidden="true" class="fas fa-star"></span>
+                    <span aria-hidden="true" class="fas fa-star"></span>
+                    <span aria-hidden="true" class="fas fa-star"></span>
+                    <span aria-hidden="true" class="fas empty fa-star"></span>
+                </span>
+
             </div>
         </div>
     </main>
     <footer>
-        
+        <div class="socials">
+            <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
+            <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
+            <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
+            <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+        </div>
+        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">
+            Recipe icons created by Freepik - Flaticon
+        </a>
     </footer>
 </body>
 </html>
