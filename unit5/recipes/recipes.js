@@ -278,4 +278,182 @@ const recipes = [
 		recipeYield: '12 servings',
 		rating: 4
 	}
-]
+];
+
+function GenerateNumber(num) {
+	// Return a random number based on the number of given recipes
+	let number = Math.floor(Math.random() * num);
+	
+	return number;
+};
+
+function GetRecipeAmount(recipes) {
+	// Return the array length
+	return recipes.length;
+};
+
+function TagHTMLTemplate(tags) {
+
+let tags_string = "";
+
+	// add each tag to the tag string
+	tags.forEach((tag) => {
+		tags_string += 
+		`<div class="tag">
+			${tag}
+		</div>`
+		
+	})
+
+	// return the tag string
+	return tags_string;
+}
+
+function RecipeRatingHTMLTemplate(rating) {
+    let stars = "";
+
+    const fullStar = '<span aria-hidden="true" class="icon-star">🌕</span>';
+    const halfStar = '<span aria-hidden="true" class="icon-star-half">🌗</span>';
+    const emptyStar = '<span aria-hidden="true" class="icon-star-empty">🌑</span>';
+
+    const fullStars = Math.floor(rating);  // Get the number of full stars
+    let hasHalfStar = false;  // Initially set to false
+
+    // Check if there's a half star
+    if (rating % 1 !== 0) {
+        hasHalfStar = true;
+    }
+
+    let totalStars = fullStars;
+
+    // If there is a half star, increase totalStars by 1
+    if (hasHalfStar) {
+        totalStars = fullStars + 1;
+    }
+
+    // Add full stars
+    for (let i = 1; i <= fullStars; i++) {
+        stars += fullStar;
+    }
+
+    // Add half star if necessary
+    if (hasHalfStar) {
+        stars += halfStar;
+    }
+
+    // Add empty stars to fill up to 5
+    for (let i = totalStars + 1; i <= 5; i++) {
+        stars += emptyStar;
+    }
+
+    return stars;
+}
+
+
+function RecipeHTMLTemplate(recipe) {
+
+	// Define the recipe template
+	return `<div class="card">
+	<div class="img-content">
+		<img src="${recipe.image}" alt="image example of ${recipe.name.toLowerCase()}">
+	</div>
+	<div class="bottom-content">
+		<div class="tag-container">
+			${TagHTMLTemplate(recipe.tags)}
+		</div>
+		<h1>
+			${recipe.name.toUpperCase()}
+		</h1>
+		<span
+			class="rating"
+			role="img"
+			aria-label="Rating: ${recipe.rating} out of 5 stars"
+		>
+			${RecipeRatingHTMLTemplate(recipe.rating)}
+		</span>
+		<p class="recipe-desc">
+			${recipe.description}
+		</p>
+	</div>
+</div>`;
+};
+
+function searchHandler(event) {
+	event.preventDefault();
+	
+	// Stop search results from duplicating results 
+	let searchResults = new Set();
+	
+	// Trim white space and make the query lowercase
+	let query = document.querySelector('.recipe-input').value.trim().toLowerCase();
+	
+	// Recipe names matching the search query
+	const recipesMatchingName = recipes.filter(recipe =>
+		recipe.name.toLowerCase().includes(query)
+	);
+	
+	// Recipe tags matching the search query
+	const recipesMatchingTag = recipes.filter(recipe =>
+		recipe.tags.find((item) => item.toLowerCase().includes(query))
+	);
+
+	// Add the recipes matching names to the results
+	recipesMatchingName.forEach((recipe) => {
+		searchResults.add(recipe);
+	});
+	
+	// Add the recipes matching tags to the results
+	recipesMatchingTag.forEach((recipe) => {
+		searchResults.add(recipe);
+	});
+	
+	// Clear previous search results before displaying new ones
+	const main = document.querySelector('main');
+	
+	// Add no results message
+	main.innerHTML = 
+	`<p class="no-results hidden">
+            no results found!
+    </p>`; 
+	
+	if (searchResults.size === 0) {
+		// Show there were no results
+		const noResultMessage = document.querySelector(".no-results");
+		noResultMessage.classList.remove("hidden");
+	} 
+	
+	else {
+		// Hide no-results message if there are results
+		const noResultMessage = document.querySelector(".no-results");
+		noResultMessage.classList.add("hidden");
+		
+		// Display results
+		searchResults.forEach((recipe) => {
+			makeCard(recipe);
+		});
+	}
+}
+
+function makeCard(recipe) {
+	const main = document.querySelector('main');
+	
+	// 
+	let newCard = RecipeHTMLTemplate(recipe);
+	main.insertAdjacentHTML('afterbegin', newCard);
+}
+
+recipes.forEach(makeCard)
+
+// Making the search bar work
+const searchForm = document.getElementById("recipeSearch");
+
+searchForm.addEventListener("submit", (event) => searchHandler(event));
+
+// Uncomment to see random working
+
+// Choose a random recipe and display it
+// const recipeAmount = GetRecipeAmount(recipes);
+// const number = GenerateNumber(recipeAmount);
+// const randomRecipe = recipes[number];
+
+// makeCard(randomRecipe);
