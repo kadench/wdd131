@@ -13,9 +13,13 @@
     <meta property="og:image" content="images\small_banner_logo.png">
     <meta property="og:url" content="https://kadench.github.io/wdd131/unit6/final/index.html">
     <meta name="twitter:card" content="Store Catalog main logo">
+    <link rel="icon" type="image/png" href="images/favicon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="images/site.webmanifest">
     <link rel="stylesheet" href="main.css">
-
-    <title>Store Catalog | Catalog Page</title>
+    <title>Store Catalog | Catalog</title>
 </head>
 <body>
     <header>
@@ -42,5 +46,85 @@
             </div>
         </nav>
     </header>
+    <aside class="sidebar">
+        <h2 class="side-title">
+            Filters
+        </h2>
+        <h3 class="side-title">
+            Sort by:
+        </h3>
+        <form action="#">
+            <div class="misc-filters">
+                <!-- Price input -->
+                <p class="price-item">
+                    <label for="priceRange">Price</label>
+                    <input type="range" id="priceRange" name="priceRange" min="0" max="42" step="10" value="32">
+                </p>
+        
+                <!-- Visualizer of min and max (float "High" right to see where goes)  -->
+                <div class="range-desc">
+                    <span>Low</span>
+                    <span>High</span>
+                </div>
+        
+                <!-- Hot picks checkboxes -->
+                <p class="arrivals-section">
+                    <input type="checkbox" id="newArrivalsCheck" name="new-arrivals">
+                    <label for="newArrivalsCheck">Newest Arrivals</label>
+                </p>
+                <p class="best-section">
+                    <input type="checkbox" id="bestSellersCheck" name="best-sellers">
+                    <label for="bestSellersCheck">Best Sellers</label>
+                </p>
+            </div>
+            
+            <div class="clothing-type-section">
+                <h3 class="catagory-title">Clothing Type</h3>
+                
+                <!-- Clothing type checkboxes -->
+                <p class="tops-section">
+                    <input type="checkbox" id="topsCheck" name="clothing-tops">
+                    <label for="topsCheck">Tops</label>
+                </p>
+                <p class="active-section">
+                    <input type="checkbox" id="activeCheck" name="clothing-active-wear">
+                    <label for="activeCheck">Active Wear</label>
+                </p>
+            </div>
+            
+            <h3 class="catagory-title">Gender Specific Apparel</h3>
+            <div class="gendered-apparel">
+                <!-- Gender-specific clothing checkboxes -->
+                <p class="womens-wear">
+                    <input type="checkbox" id="womensWearCheck" name="womens-wear">
+                    <label for="womensWearCheck">Women's Wear</label>
+                </p>
+                <p class="active-section">
+                    <input type="checkbox" id="mensWearCheck" name="mens-wear">
+                    <label for="mensWearCheck">Men's Wear</label>
+                </p>
+            </div>
+        </form>
+    </aside>
+    <main>
+        <section class="product-grid">
+            <article class="product-card">
+                <div class="product-img-div">
+                    <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
+                </div>
+                <div class="product-content">
+                    <h2 class="product-title">
+                        Hanes Women's Cool Dri Shirt
+                    </h2>
+                    <p class="product-desc">
+                        Quick-drying, lightweight active shirt for women.
+                    </p>
+                </div>
+                <div class="product-price">
+                    <span>$25.00</span>
+                </div>                
+            </article>
+        </section>
+    </main>
 </body>
 </html>
