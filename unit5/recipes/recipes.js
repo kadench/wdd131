@@ -442,18 +442,16 @@ function makeCard(recipe) {
 	main.insertAdjacentHTML('afterbegin', newCard);
 }
 
-recipes.forEach(makeCard)
-
 // Making the search bar work
 const searchForm = document.getElementById("recipeSearch");
 
+// Add the submit handler event response
 searchForm.addEventListener("submit", (event) => searchHandler(event));
 
-// Uncomment to see random working
-
 // Choose a random recipe and display it
-// const recipeAmount = GetRecipeAmount(recipes);
-// const number = GenerateNumber(recipeAmount);
-// const randomRecipe = recipes[number];
+const recipeAmount = GetRecipeAmount(recipes);
+const number = GenerateNumber(recipeAmount);
+const randomRecipe = recipes[number];
 
-// makeCard(randomRecipe);
+// Create the random chose recipe element.
+makeCard(randomRecipe);
