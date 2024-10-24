@@ -26,7 +26,7 @@
   --headline-color-on-white: var(--primary-color);  /* headlines on a white background */ 
   --headline-color-on-color: var(--accent2-color); /* headlines on a colored background */ 
   --paragraph-color-on-white: #151515; /* paragraph text on a white background */ 
-  --paragraph-color-on-color: #151515; /* paragraph text on a colored background */ 
+  --paragraph-color-on-color: #f2f2f2; /* paragraph text on a colored background */ 
   --paragraph-background-color: var(--accent1-color);
   --nav-link-color: #f2f2f2;
   --nav-background-color: var(--primary-color);
@@ -96,10 +96,11 @@ img {
   font-size: 1.5em;
   padding: .5em;
   align-self: center;
+  transition: .2s;
 }
 
 .hamburger:hover {
-  background-color: none;
+  background-color: var(--nav-hover-background-color);
 }
 
 .cart {
@@ -142,7 +143,7 @@ img {
   height: 80px;
   font-family: var(--paragraph-font);
   color: var(--nav-link-color);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-decoration: none;
   align-content: center;
   transition: background-color 0.2s ease-out;
@@ -172,7 +173,9 @@ img {
 }
 
 .form-subtitle {
-  margin-top: 0;
+  margin: 0;
+  padding: .8em 0 0 0;
+
 }
 
 .sidebar {
@@ -183,30 +186,265 @@ form > *, .form-subtitle {
   margin-left: 1em;
 }
 
-[type="checkbox"] {
-  aspect-ratio: 1;
-  width: 1.5em;
+.price-item {
+  display: flex;
+  align-items: center;
 }
 
+label[for="priceRange"] {
+  font-family: var(--heading-font);
+  color: var(--secondary-color);
+}
+
+.range-desc {
+  margin: 0 0 1em 4.3em;
+  display: flex;
+  justify-content: space-between;
+  width: 55%;
+  max-width: 12.5em;
+}
+
+.range-desc > * {
+  padding-top: 0;
+  margin-top: 0;
+  font-size: 1em;
+}
+
+.price-item > * {
+  margin-right: .5em;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 55%;
+  max-width: 15em;
+  height: 8px;
+  background-color: var(--nav-hover-background-color);
+  border-radius: 5px;
+  margin: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb,
+input[type="range"]:hover::-moz-range-thumb {
+  background-color: var(--primary-color);
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+input[type="checkbox"]:focus,
+input[type="checkbox"]:hover {
+  outline: none;
+  border: 2px solid var(--secondary-color);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  position: relative;
+}
+
+input[type="checkbox"] ~ label:hover, input[type="checkbox"] ~ label {
+  cursor: pointer;
+  user-select: none;
+}
+
+.mens-section {
+  padding-bottom: 1em;
+}
+
+
 label {
-  font-size: 1.2em;
+  font-family: var(--paragraph-font);
+  color: var(--paragraph-color-on-white);
+  vertical-align: middle; 
 }
 
 h1 {
   color: var(--secondary-color);
+  font-family: 'JamisonBC', sans-serif;
 }
 
 /* Apply to all headings */
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   font-family: 'JamisonBC', sans-serif;
+  color: var(--headline-color-on-white);
 }
 
 .main-title {
   text-align: center;
 }
 
+.product-grid {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+}
+
+.product-card {
+  padding: 1.5em;
+  padding-top: 1em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #FFF;
+}
+
+.product-card:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  border-radius: 15px;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.product-price {
+  font-size: 1.5em;
+  margin: .5em 0;
+  margin-top: .7em;
+  font-weight: 600;
+  color: #2a8703;
+}
+
+.price-was {
+  text-decoration: line-through;
+  color: #6d6d6d;
+}
+
+.discount {
+  background-color: #2a8703;
+  color: #F2F2F2;
+  padding: .3em;
+  margin: .3em;
+  font-size: .8em;
+}
+
+.tag-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--accent1-color);
+  color: var(--primary-color);
+  font-family: var(--paragraph-font);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tag:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.category {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #333333;
+  color: var(--paragraph-color-on-color);
+  font-family: var(--paragraph-font);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.category:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+[data-tag="best-seller"] {
+  background-color: #B35C5C;
+  color: #F2F2F2;
+}
+
+[data-tag="best-seller"]:hover {
+  background-color: #CC7A7A;
+}
+
+[data-tag="sale"] {
+  background-color: #2a8703;
+  color: #F2F2F2;
+}
+
+[data-tag="sale"]:hover {
+  background-color: #4f833a;
+}
+
+[data-tag="new-arrival"] {
+  background-color: var(--accent1-color);
+  color: var(--primary-color);
+}
+
+[data-tag="new-arrival"]:hover {
+  background-color: #ebcb9e;
+}
+
 p {
   font-family: var(--paragraph-font);
 }
 
+
+footer {
+  text-align: center;
+  padding: 10px;
+  color: var(--accent2-color);
+  background-color: var(--primary-color);
+  font-size: 1.2em;
+}
 

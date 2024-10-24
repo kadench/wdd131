@@ -6,7 +6,9 @@ const products = [
         tags: ["hoodie", "moisture-wicking", "activewear", "pullover"],
         availableSizes: ["S", "M", "L", "XL", "2X"],
         shortTitle: "Black Sport-Tek Hoodie",
-        shortDescription: "Moisture-wicking pullover hoodie for active use."
+        shortDescription: "Moisture-wicking pullover hoodie for active use.",
+        newArrival: false,
+        bestSeller: false,
     },
     {
         productName: "Black Hanes Women's Sport Cool Dri Performance Shirt",
@@ -15,7 +17,10 @@ const products = [
         tags: ["t-shirt", "moisture-wicking", "women's activewear", "cool-dri"],
         availableSizes: ["XS", "S", "M", "L", "XL"],
         shortTitle: "Hanes Women's Cool Dri Shirt",
-        shortDescription: "Quick-drying, lightweight active shirt for women."
+        shortDescription: "Quick-drying, lightweight active shirt for women.",
+        newArrival: true,
+        bestSeller: false,
+        sale: true,
     },
     {
         productName: "Black Port & Company Core Crewneck Sweatshirt",
@@ -24,6 +29,8 @@ const products = [
         tags: ["sweatshirt", "crewneck", "casual", "layering"],
         availableSizes: ["S", "M", "L", "XL", "2X"],
         shortTitle: "Port & Company Sweatshirt",
-        shortDescription: "Casual fleece crewneck sweatshirt for layering."
+        shortDescription: "Casual fleece crewneck sweatshirt for layering.",
+        newArrival: false,
+        bestSeller: true,
     }
 ];
