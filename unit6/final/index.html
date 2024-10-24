@@ -18,8 +18,10 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="manifest" href="images/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="main.css">
     <title>Store Catalog | Catalog</title>
+    <script src="catalog.js" defer></script>
 </head>
 <body>
     <header>
@@ -29,7 +31,15 @@
             </div>
         </a>
         <nav class="main-nav">
-            <ul class="home-list">
+            <div class="vis-mobile-content">
+                <a href="#" class="hamburger">
+                    <span class="fa fa-bars"></span>
+                </a>
+                <div class="cart">
+                    <img src="images/cart-icon.svg" alt="go to cart">
+                </div>
+            </div>
+            <ul class="home-list hidden">
                 <li>
                     <a href="#">Home</a>
                 </li>
@@ -43,16 +53,16 @@
                     <a href="#">Contact</a>
                 </li>
             </ul>
-            <div class="cart">
-                <img src="images/cart-icon.svg" alt="go to cart">
-            </div>
         </nav>
     </header>
-    <aside class="sidebar">
+    <div class="aside-titlebar">
+        <span class="fa fa-chevron-up close-form"></span>
         <h2 class="side-title">
-            Filters
+            Catalog Filters
         </h2>
-        <h3 class="side-title">
+    </div>
+    <aside class="sidebar">
+        <h3 class="form-subtitle">
             Sort by:
         </h3>
         <form action="#">

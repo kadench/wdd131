@@ -36,41 +36,98 @@
 
 * {
   font-family: var(--paragraph-font);
+  box-sizing: inherit;
+  flex-shrink: 0;
+  transition: .1s;
+}
+
+.hidden {
+  display: none;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  min-width: 100%;
 }
 
 .main-logo {
-    display: flex;
-    width: 100%;
-    max-width: 100%;
-    justify-content: center;
-    background-color: var(--primary-color);
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  background-color: var(--primary-color);
+}
+
+img {
+  max-width: 100%;
 }
 
 .main-logo img {
-    height: 13em;
-
+  height: 9em;
+  align-self: center;
 }
 
+
 .main-nav {
-    display: grid;
-    grid-template-columns: 85% 15%;
-    width: 100%;
-    max-width: 100%;
-    background-color: var(--primary-color);
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--primary-color);
+}
+
+.vis-mobile-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  color: var(--accent2-color);
+  font-size: 1.5em;
+  padding: .5em;
+  align-self: center;
+}
+
+.hamburger:hover {
+  background-color: none;
+}
+
+.cart {
+  display: flex;
+  padding: .5em .6em;
+}
+
+.cart img {
+  height: 2em;
+  aspect-ratio: 1;
+  align-self: center;
+}
+
+.cart:hover {
+  cursor: pointer;
+  background-color: var(--nav-hover-background-color);
 }
 
 .home-list {
   display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   list-style-type: none;
-  
+}
+
+.home-list.hidden {
+  display: none;
 }
 
 .home-list li {
@@ -79,6 +136,7 @@ body {
 }
 
 .home-list li a {
+  text-align: center;
   flex-grow: 1;
   width: 100%;
   height: 80px;
@@ -90,31 +148,45 @@ body {
   transition: background-color 0.2s ease-out;
 }
 
-/* nav a and hover styling */
-nav a:hover {
+.home-list li a:hover {
   background-color: var(--nav-hover-background-color);
-  color: var(--nav-hover-link-color);
 }
 
+.close-form {
+  padding: 1.5em 1em;
+  transition: .2s;
+}
 
-.cart {
+.close-form:hover {
+  cursor: pointer;
+  background-color: #e7e7e7;
+}
+
+.aside-titlebar {
+  align-content: center;
   display: flex;
-  justify-content: center;
 }
 
-.cart img {
-  height: 2em;
-  aspect-ratio: 1;
-  align-self: center;
-  margin: 1em;
-  margin-right: 2em;
+.side-title {
+  padding-left: .2em;
 }
 
-/* .cart img:hover {
+.form-subtitle {
+  margin-top: 0;
+}
 
-} */
+h1 {
+  color: var(--secondary-color);
+}
 
 /* Apply to all headings */
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   font-family: 'JamisonBC', sans-serif;
+  color: var(--paragraph-color-on-white);
 }
+
+p {
+  font-family: var(--paragraph-font);
+}
+
+
