@@ -175,14 +175,34 @@ img {
   margin-top: 0;
 }
 
+.sidebar {
+  background-color: #fafafa;
+}
+
+form > *, .form-subtitle {
+  margin-left: 1em;
+}
+
+[type="checkbox"] {
+  aspect-ratio: 1;
+  width: 1.5em;
+}
+
+label {
+  font-size: 1.2em;
+}
+
 h1 {
   color: var(--secondary-color);
 }
 
 /* Apply to all headings */
-h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'JamisonBC', sans-serif;
-  color: var(--paragraph-color-on-white);
+}
+
+.main-title {
+  text-align: center;
 }
 
 p {
