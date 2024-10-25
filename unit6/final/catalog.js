@@ -45,9 +45,9 @@ function menuHandler() {
 
 function formCloseHandler() {
     const asideChevron = document.querySelector(".close-form");
-    const sidebar = document.querySelector(".sidebar");
+    const formDiv = document.querySelector(".filter-form");
 
-    sidebar.classList.toggle("hidden");
+    formDiv.classList.toggle("hidden");
     asideChevron.classList.toggle("fa-chevron-up");
     asideChevron.classList.toggle("fa-chevron-down");
 

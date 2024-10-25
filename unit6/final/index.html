@@ -55,269 +55,286 @@
             </ul>
         </nav>
     </header>
-    <div class="aside-titlebar">
-        <span class="fa fa-chevron-up close-form"></span>
-        <h2 class="side-title">
-            Catalog Filters
-        </h2>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="aside-titlebar">
+                <span class="fa fa-chevron-up close-form"></span>
+                <h2 class="side-title">
+                    Catalog Filters
+                </h2>
+            </div>
+            <div class="filter-form">
+                <h3 class="form-subtitle">
+                    Numbers
+                </h3>
+                <form action="#">
+                    <div class="misc-filters">
+                        <!-- Price input -->
+                        <p class="price-item">
+                            <label for="priceRange">Price</label>
+                            <input type="range" id="priceRange" name="priceRange" min="0" max="42" step="10" value="32">
+                        </p>
+                        
+                        <!-- Visualizer of min and max (float "High" right to see where goes)  -->
+                        <div class="range-desc">
+                            <span>Low</span>
+                            <span>High</span>
+                        </div>
+                        
+                        <!-- Hot picks checkboxes -->
+                        <p class="arrival-section">
+                            <input type="checkbox" id="newArrivalsCheck" name="new-arrivals">
+                            <label for="newArrivalsCheck">Newest Arrivals</label>
+                        </p>
+                        <p class="best-section">
+                            <input type="checkbox" id="bestSellersCheck" name="best-sellers">
+                            <label for="bestSellersCheck">Best Sellers</label>
+                        </p>
+                    </div>
+                    
+                    <div class="clothing-type-section">
+                        <h3 class="category-title">Clothing Type</h3>
+                        
+                        <!-- Clothing type checkboxes -->
+                        <p class="tops-section">
+                            <input type="checkbox" id="topsCheck" name="clothing-tops">
+                            <label for="topsCheck">Tops</label>
+                        </p>
+                        <p class="active-section">
+                            <input type="checkbox" id="activeCheck" name="clothing-active-wear">
+                            <label for="activeCheck">Active Wear</label>
+                        </p>
+                    </div>
+                    
+                    <h3 class="category-title">Gender Specific Apparel</h3>
+                    <div class="gendered-apparel">
+                        <!-- Gender-specific clothing checkboxes -->
+                        <p class="womens-wear">
+                            <input type="checkbox" id="womensWearCheck" name="womens-wear">
+                            <label for="womensWearCheck">Women's Wear</label>
+                        </p>
+                        <p class="mens-section">
+                            <input type="checkbox" id="mensWearCheck" name="mens-wear">
+                            <label for="mensWearCheck">Men's Wear</label>
+                        </p>
+                    </div>
+                    
+                    <h3 class="category-title">Misc.</h3>
+                    <div class="gendered-apparel">
+                    <!-- Misc. checkboxes -->
+                        <p class="category-tags-section">
+                            <input type="checkbox" id="toggleCategoryTags" name="toggle-category-tags" checked>
+                            <label for="toggleCategoryTags">Catagory Tags</label>
+                        </p>
+                        <p class="general-tags-section">
+                            <input type="checkbox" id="toggleGeneralTags" name="toggle-general-tags" checked>
+                            <label for="toggleGeneralTags">General Tags</label>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </aside>
+        <main>
+            <h1 class="main-title">
+                <img src="images/catalog-h1.svg" alt="main heading reading 'catalog'">
+            </h1>
+            <section class="product-grid">
+                
+                <article class="product-card">
+                    <div class="product-img-div">
+                      <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
+                    </div>
+                    <div class="product-content">
+                        <div class="price-details">
+                            <div class="product-price">
+                                <span class="discount-percentage">20% off</span>
+                                <span class="price-was">$24.99</span>
+                                <span class="discounted-price">$19.99</span>
+                            </div>
+                        </div>
+                        <h2 class="product-title">
+                        Hanes Women's Cool Dri Shirt
+                        </h2>
+                        <div class="tag-container">
+                            <p class="tag" data-tag="sale">Sale</p>
+                            <p class="tag" data-tag="new-arrival">New Arrival</p>
+                        </div>
+                        <div class="category-container">
+                        <p class="category" data-category="t-shirt">T-shirt</p>
+                        <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
+                        <p class="category" data-category="womens-activewear">Women's Activewear</p>
+                        <p class="category" data-category="cool-dri">Cool-Dri</p>
+                        </div>
+                        <div class="product-desc">
+                            <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                read more <span class="fa fa-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-div">
+                      <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
+                    </div>
+                    <div class="product-content">
+                        <div class="price-details">
+                            <div class="product-price">
+                                <span class="discount-percentage">20% off</span>
+                                <span class="price-was">$24.99</span>
+                                <span class="discounted-price">$19.99</span>
+                            </div>
+                        </div>
+                        <h2 class="product-title">
+                        Hanes Women's Cool Dri Shirt
+                        </h2>
+                        <div class="tag-container">
+                            <p class="tag" data-tag="sale">Sale</p>
+                            <p class="tag" data-tag="new-arrival">New Arrival</p>
+                        </div>
+                        <div class="category-container">
+                        <p class="category" data-category="t-shirt">T-shirt</p>
+                        <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
+                        <p class="category" data-category="womens-activewear">Women's Activewear</p>
+                        <p class="category" data-category="cool-dri">Cool-Dri</p>
+                        </div>
+                        <div class="product-desc">
+                            <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                read more <span class="fa fa-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-div">
+                      <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
+                    </div>
+                    <div class="product-content">
+                        <div class="price-details">
+                            <div class="product-price">
+                                <span class="discount-percentage">20% off</span>
+                                <span class="price-was">$24.99</span>
+                                <span class="discounted-price">$19.99</span>
+                            </div>
+                        </div>
+                        <h2 class="product-title">
+                        Hanes Women's Cool Dri Shirt
+                        </h2>
+                        <div class="tag-container">
+                            <p class="tag" data-tag="sale">Sale</p>
+                            <p class="tag" data-tag="new-arrival">New Arrival</p>
+                        </div>
+                        <div class="category-container">
+                        <p class="category" data-category="t-shirt">T-shirt</p>
+                        <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
+                        <p class="category" data-category="womens-activewear">Women's Activewear</p>
+                        <p class="category" data-category="cool-dri">Cool-Dri</p>
+                        </div>
+                        <div class="product-desc">
+                            <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                read more <span class="fa fa-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-div">
+                      <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
+                    </div>
+                    <div class="product-content">
+                        <div class="price-details">
+                            <div class="product-price">
+                                <span class="discount-percentage">20% off</span>
+                                <span class="price-was">$24.99</span>
+                                <span class="discounted-price">$19.99</span>
+                            </div>
+                        </div>
+                        <h2 class="product-title">
+                        Hanes Women's Cool Dri Shirt
+                        </h2>
+                        <div class="tag-container">
+                            <p class="tag" data-tag="sale">Sale</p>
+                            <p class="tag" data-tag="new-arrival">New Arrival</p>
+                        </div>
+                        <div class="category-container">
+                        <p class="category" data-category="t-shirt">T-shirt</p>
+                        <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
+                        <p class="category" data-category="womens-activewear">Women's Activewear</p>
+                        <p class="category" data-category="cool-dri">Cool-Dri</p>
+                        </div>
+                        <div class="product-desc">
+                            <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                read more <span class="fa fa-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-div">
+                      <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
+                    </div>
+                    <div class="product-content">
+                        <div class="price-details">
+                            <div class="product-price">
+                                <span class="discount-percentage">20% off</span>
+                                <span class="price-was">$24.99</span>
+                                <span class="discounted-price">$19.99</span>
+                            </div>
+                        </div>
+                        <h2 class="product-title">
+                        Hanes Women's Cool Dri Shirt
+                        </h2>
+                        <div class="tag-container">
+                            <p class="tag" data-tag="sale">Sale</p>
+                            <p class="tag" data-tag="new-arrival">New Arrival</p>
+                        </div>
+                        <div class="category-container">
+                        <p class="category" data-category="t-shirt">T-shirt</p>
+                        <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
+                        <p class="category" data-category="womens-activewear">Women's Activewear</p>
+                        <p class="category" data-category="cool-dri">Cool-Dri</p>
+                        </div>
+                        <div class="product-desc">
+                            <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                read more <span class="fa fa-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-div">
+                      <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
+                    </div>
+                    <div class="product-content">
+                        <div class="price-details">
+                            <div class="product-price">
+                                <span class="discount-percentage">20% off</span>
+                                <span class="price-was">$24.99</span>
+                                <span class="discounted-price">$19.99</span>
+                            </div>
+                        </div>
+                        <h2 class="product-title">
+                        Hanes Women's Cool Dri Shirt
+                        </h2>
+                        <div class="tag-container">
+                            <p class="tag" data-tag="sale">Sale</p>
+                            <p class="tag" data-tag="new-arrival">New Arrival</p>
+                        </div>
+                        <div class="category-container">
+                        <p class="category" data-category="t-shirt">T-shirt</p>
+                        <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
+                        <p class="category" data-category="womens-activewear">Women's Activewear</p>
+                        <p class="category" data-category="cool-dri">Cool-Dri</p>
+                        </div>
+                        <div class="product-desc">
+                            <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                read more <span class="fa fa-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
     </div>
-    <aside class="sidebar">
-        <h3 class="form-subtitle">
-            Sort by:
-        </h3>
-        <form action="#">
-            <div class="misc-filters">
-                <!-- Price input -->
-                <p class="price-item">
-                    <label for="priceRange">Price</label>
-                    <input type="range" id="priceRange" name="priceRange" min="0" max="42" step="10" value="32">
-                </p>
-        
-                <!-- Visualizer of min and max (float "High" right to see where goes)  -->
-                <div class="range-desc">
-                    <span>Low</span>
-                    <span>High</span>
-                </div>
-        
-                <!-- Hot picks checkboxes -->
-                <p class="arrival-section">
-                    <input type="checkbox" id="newArrivalsCheck" name="new-arrivals">
-                    <label for="newArrivalsCheck">Newest Arrivals</label>
-                </p>
-                <p class="best-section">
-                    <input type="checkbox" id="bestSellersCheck" name="best-sellers">
-                    <label for="bestSellersCheck">Best Sellers</label>
-                </p>
-            </div>
-            
-            <div class="clothing-type-section">
-                <h3 class="catagory-title">Clothing Type</h3>
-                
-                <!-- Clothing type checkboxes -->
-                <p class="tops-section">
-                    <input type="checkbox" id="topsCheck" name="clothing-tops">
-                    <label for="topsCheck">Tops</label>
-                </p>
-                <p class="active-section">
-                    <input type="checkbox" id="activeCheck" name="clothing-active-wear">
-                    <label for="activeCheck">Active Wear</label>
-                </p>
-            </div>
-            
-            <h3 class="catagory-title">Gender Specific Apparel</h3>
-            <div class="gendered-apparel">
-                
-                <!-- Gender-specific clothing checkboxes -->
-                <p class="womens-wear">
-                    <input type="checkbox" id="womensWearCheck" name="womens-wear">
-                    <label for="womensWearCheck">Women's Wear</label>
-                </p>
-                <p class="mens-section">
-                    <input type="checkbox" id="mensWearCheck" name="mens-wear">
-                    <label for="mensWearCheck">Men's Wear</label>
-                </p>
-            </div>
-        </form>
-    </aside>
-    <main>
-        <h1 class="main-title">
-            Catalog
-        </h1>
-        <section class="product-grid">
-            <article class="product-card">
-                <div class="product-img-div">
-                  <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
-                </div>
-                <div class="product-content">
-                    <div class="price-details">
-                        <div class="product-price">
-                            <span class="discount-percentage">20% off</span>
-                            <span class="price-was">$24.99</span>
-                            <span class="discounted-price">$19.99</span>
-                        </div>
-                    </div>
-                    <h2 class="product-title">
-                    Hanes Women's Cool Dri Shirt
-                    </h2>
-                    <div class="tag-container">
-                        <p class="tag" data-tag="sale">Sale</p>
-                        <p class="tag" data-tag="new-arrival">New Arrival</p>
-                    </div>
-                    <div class="category-container">
-                    <p class="category" data-category="t-shirt">T-shirt</p>
-                    <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
-                    <p class="category" data-category="womens-activewear">Women's Activewear</p>
-                    <p class="category" data-category="cool-dri">Cool-Dri</p>
-                    </div>
-                    <div class="product-desc">
-                        <a href="pdp.html/#hanes-womens-cool-dri-shirt">
-                            READ MORE
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <article class="product-card">
-                <div class="product-img-div">
-                  <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
-                </div>
-                <div class="product-content">
-                    <div class="price-details">
-                        <div class="product-price">
-                            <span class="discount-percentage">20% off</span>
-                            <span class="price-was">$24.99</span>
-                            <span class="discounted-price">$19.99</span>
-                        </div>
-                    </div>
-                    <h2 class="product-title">
-                    Hanes Women's Cool Dri Shirt
-                    </h2>
-                    <div class="tag-container">
-                        <p class="tag" data-tag="sale">Sale</p>
-                        <p class="tag" data-tag="new-arrival">New Arrival</p>
-                    </div>
-                    <div class="category-container">
-                    <p class="category" data-category="t-shirt">T-shirt</p>
-                    <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
-                    <p class="category" data-category="womens-activewear">Women's Activewear</p>
-                    <p class="category" data-category="cool-dri">Cool-Dri</p>
-                    </div>
-                    <div class="product-desc">
-                        <a href="pdp.html/#hanes-womens-cool-dri-shirt">
-                            READ MORE
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <article class="product-card">
-                <div class="product-img-div">
-                  <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
-                </div>
-                <div class="product-content">
-                    <div class="price-details">
-                        <div class="product-price">
-                            <span class="discount-percentage">20% off</span>
-                            <span class="price-was">$24.99</span>
-                            <span class="discounted-price">$19.99</span>
-                        </div>
-                    </div>
-                    <h2 class="product-title">
-                    Hanes Women's Cool Dri Shirt
-                    </h2>
-                    <div class="tag-container">
-                        <p class="tag" data-tag="sale">Sale</p>
-                        <p class="tag" data-tag="new-arrival">New Arrival</p>
-                    </div>
-                    <div class="category-container">
-                    <p class="category" data-category="t-shirt">T-shirt</p>
-                    <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
-                    <p class="category" data-category="womens-activewear">Women's Activewear</p>
-                    <p class="category" data-category="cool-dri">Cool-Dri</p>
-                    </div>
-                    <div class="product-desc">
-                        <a href="pdp.html/#hanes-womens-cool-dri-shirt">
-                            READ MORE
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <article class="product-card">
-                <div class="product-img-div">
-                  <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
-                </div>
-                <div class="product-content">
-                    <div class="price-details">
-                        <div class="product-price">
-                            <span class="discount-percentage">20% off</span>
-                            <span class="price-was">$24.99</span>
-                            <span class="discounted-price">$19.99</span>
-                        </div>
-                    </div>
-                    <h2 class="product-title">
-                    Hanes Women's Cool Dri Shirt
-                    </h2>
-                    <div class="tag-container">
-                        <p class="tag" data-tag="sale">Sale</p>
-                        <p class="tag" data-tag="new-arrival">New Arrival</p>
-                    </div>
-                    <div class="category-container">
-                    <p class="category" data-category="t-shirt">T-shirt</p>
-                    <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
-                    <p class="category" data-category="womens-activewear">Women's Activewear</p>
-                    <p class="category" data-category="cool-dri">Cool-Dri</p>
-                    </div>
-                    <div class="product-desc">
-                        <a href="pdp.html/#hanes-womens-cool-dri-shirt">
-                            READ MORE
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <article class="product-card">
-                <div class="product-img-div">
-                  <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
-                </div>
-                <div class="product-content">
-                    <div class="price-details">
-                        <div class="product-price">
-                            <span class="discount-percentage">20% off</span>
-                            <span class="price-was">$24.99</span>
-                            <span class="discounted-price">$19.99</span>
-                        </div>
-                    </div>
-                    <h2 class="product-title">
-                    Hanes Women's Cool Dri Shirt
-                    </h2>
-                    <div class="tag-container">
-                        <p class="tag" data-tag="sale">Sale</p>
-                        <p class="tag" data-tag="new-arrival">New Arrival</p>
-                    </div>
-                    <div class="category-container">
-                    <p class="category" data-category="t-shirt">T-shirt</p>
-                    <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
-                    <p class="category" data-category="womens-activewear">Women's Activewear</p>
-                    <p class="category" data-category="cool-dri">Cool-Dri</p>
-                    </div>
-                    <div class="product-desc">
-                        <a href="pdp.html/#hanes-womens-cool-dri-shirt">
-                            READ MORE
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <article class="product-card">
-                <div class="product-img-div">
-                  <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
-                </div>
-                <div class="product-content">
-                    <div class="price-details">
-                        <div class="product-price">
-                            <span class="discount-percentage">20% off</span>
-                            <span class="price-was">$24.99</span>
-                            <span class="discounted-price">$19.99</span>
-                        </div>
-                    </div>
-                    <h2 class="product-title">
-                    Hanes Women's Cool Dri Shirt
-                    </h2>
-                    <div class="tag-container">
-                        <p class="tag" data-tag="sale">Sale</p>
-                        <p class="tag" data-tag="new-arrival">New Arrival</p>
-                    </div>
-                    <div class="category-container">
-                    <p class="category" data-category="t-shirt">T-shirt</p>
-                    <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
-                    <p class="category" data-category="womens-activewear">Women's Activewear</p>
-                    <p class="category" data-category="cool-dri">Cool-Dri</p>
-                    </div>
-                    <div class="product-desc">
-                        <a href="pdp.html/#hanes-womens-cool-dri-shirt">
-                            READ MORE
-                        </a>
-                    </div>
-                </div>
-            </article>
-        </section>
-    </main>
     <footer>
         <p class="copyright">
             All Rights Reserved © Store Catalog 2024
