@@ -115,6 +115,10 @@ img {
   align-items: center;
 }
 
+.nav-main-section {
+  position: absolute;
+}
+
 .hamburger {
   color: var(--accent2-color);
   font-size: 1.5em;
@@ -526,11 +530,6 @@ footer {
     align-content: center;
     transition: background-color 0.2s ease-out;
   }
-
-  .cart {
-  padding: 1.5em;
-  margin: 0;
-  }
   
   .desktop-menu li a:hover {
     background-color: var(--nav-hover-background-color);
@@ -648,6 +647,10 @@ footer {
   
   .product-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  
+  .cart {
+    margin: 1em;
   }
 }
 
