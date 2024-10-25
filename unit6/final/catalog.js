@@ -9,6 +9,7 @@ const products = [
         shortDescription: "Moisture-wicking pullover hoodie for active use.",
         newArrival: false,
         bestSeller: false,
+        sale: false,
     },
     {
         productName: "Black Hanes Women's Sport Cool Dri Performance Shirt",
@@ -34,14 +35,44 @@ const products = [
         shortDescription: "Casual fleece crewneck sweatshirt for layering.",
         newArrival: false,
         bestSeller: true,
+        sale: true,
+        
     }
 ];
 
-function menuHandler() {
-    const pageLinks = document.querySelector(".home-list");
+function toggleCategoryTagsHandler() {
+    const categorySections = document.querySelectorAll(".category-container");
 
-    pageLinks.classList.toggle("hidden");
-}
+    categorySections.forEach((section) => {
+        section.classList.toggle("hidden");
+    });
+};
+
+function toggleGeneralTagsHandler() {
+    const generalTagSections = document.querySelectorAll(".tag-container");
+
+    generalTagSections.forEach((section) => {
+        section.classList.toggle("hidden");
+    });
+};
+
+function menuHandler() {
+    const mobileList = document.querySelector(".mobile-list");
+    const desktopList = document.querySelector("desktop-menu");
+    const hamburgerIcon = document.querySelector(".hamburger");
+
+    if (window.innerWidth < 768) {
+        mobileList.classList.remove("hidden");
+        hamburgerIcon.style.userSelect = "all";
+        hamburgerIcon.style.zIndex = "1";
+    } else {
+        mobileList.classList.add("hidden");
+        desktopList.classList.remove("hidden")
+        hamburgerIcon.style.userSelect = "none";
+        hamburgerIcon.style.zIndex = "-1";
+        pageLinks.classList.add("desktop-menu");
+    }
+};
 
 function formCloseHandler() {
     const asideChevron = document.querySelector(".close-form");
@@ -51,11 +82,24 @@ function formCloseHandler() {
     asideChevron.classList.toggle("fa-chevron-up");
     asideChevron.classList.toggle("fa-chevron-down");
 
-}
+};
 
 // Define the icons for the document to find
 const hamburgerIcon = document.querySelector(".hamburger");
 const asideChevron = document.querySelector(".close-form");
+
+// Make an event listener that will toggle the visibility of the tags 
+const categoryTagSectionCheck = document.getElementById("toggleCategoryTags");
+const generalTagCheck = document.getElementById("toggleGeneralTags");
+
+categoryTagSectionCheck.addEventListener("change", toggleCategoryTagsHandler);
+generalTagCheck.addEventListener("change", toggleGeneralTagsHandler);
+
+// Make a resize event to ensure the window is desktop size to show the menu
+document.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("resize", menuHandler);
+    window.addEventListener("load", menuHandler);
+});
 
 // Add event listers to the button to open the page links on mobile and desktop
 hamburgerIcon.addEventListener("click", menuHandler); 

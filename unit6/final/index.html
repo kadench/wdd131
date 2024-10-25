@@ -31,7 +31,21 @@
             </div>
         </a>
         <nav class="main-nav">
-            <div class="vis-mobile-content">
+            <div class="nav-content">
+                <ul class="desktop-menu hidden">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Catalog</a>
+                    </li>
+                    <li>
+                        <a href="#">Clothing</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
                 <a href="#" class="hamburger">
                     <span class="fa fa-bars"></span>
                 </a>
@@ -39,7 +53,7 @@
                     <img src="images/cart-icon.svg" alt="go to cart">
                 </div>
             </div>
-            <ul class="home-list hidden">
+            <ul class="mobile-list">
                 <li>
                     <a href="#">Home</a>
                 </li>
@@ -122,14 +136,14 @@
                     <h3 class="category-title">Misc.</h3>
                     <div class="gendered-apparel">
                     <!-- Misc. checkboxes -->
+                    <p class="general-tags-section">
+                        <input type="checkbox" id="toggleGeneralTags" name="toggle-general-tags" checked>
+                        <label for="toggleGeneralTags">General Tags</label>
                         <p class="category-tags-section">
-                            <input type="checkbox" id="toggleCategoryTags" name="toggle-category-tags" checked>
+                            <input type="checkbox" id="toggleCategoryTags" name="toggle-category-tags">
                             <label for="toggleCategoryTags">Catagory Tags</label>
                         </p>
-                        <p class="general-tags-section">
-                            <input type="checkbox" id="toggleGeneralTags" name="toggle-general-tags" checked>
-                            <label for="toggleGeneralTags">General Tags</label>
-                        </p>
+                    </p>
                     </div>
                 </form>
             </div>
@@ -139,7 +153,6 @@
                 <img src="images/catalog-h1.svg" alt="main heading reading 'catalog'">
             </h1>
             <section class="product-grid">
-                
                 <article class="product-card">
                     <div class="product-img-div">
                       <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
@@ -156,10 +169,11 @@
                         Hanes Women's Cool Dri Shirt
                         </h2>
                         <div class="tag-container">
+                            <p class="tag" data-tag="best-seller">Best</p>
                             <p class="tag" data-tag="sale">Sale</p>
                             <p class="tag" data-tag="new-arrival">New Arrival</p>
                         </div>
-                        <div class="category-container">
+                        <div class="category-container hidden">
                         <p class="category" data-category="t-shirt">T-shirt</p>
                         <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
                         <p class="category" data-category="womens-activewear">Women's Activewear</p>
@@ -167,7 +181,10 @@
                         </div>
                         <div class="product-desc">
                             <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
-                                read more <span class="fa fa-chevron-right"></span>
+                                read more<span class="fa fa-chevron-right"></span>
+                            </a>
+                            <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                add to cart<span class="fa fa-chevron-right"></span>
                             </a>
                         </div>
                     </div>
@@ -188,10 +205,11 @@
                         Hanes Women's Cool Dri Shirt
                         </h2>
                         <div class="tag-container">
+                            <p class="tag" data-tag="best-seller">Best</p>
                             <p class="tag" data-tag="sale">Sale</p>
                             <p class="tag" data-tag="new-arrival">New Arrival</p>
                         </div>
-                        <div class="category-container">
+                        <div class="category-container hidden">
                         <p class="category" data-category="t-shirt">T-shirt</p>
                         <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
                         <p class="category" data-category="womens-activewear">Women's Activewear</p>
@@ -199,7 +217,10 @@
                         </div>
                         <div class="product-desc">
                             <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
-                                read more <span class="fa fa-chevron-right"></span>
+                                read more<span class="fa fa-chevron-right"></span>
+                            </a>
+                            <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                add to cart<span class="fa fa-chevron-right"></span>
                             </a>
                         </div>
                     </div>
@@ -220,10 +241,11 @@
                         Hanes Women's Cool Dri Shirt
                         </h2>
                         <div class="tag-container">
+                            <p class="tag" data-tag="best-seller">Best</p>
                             <p class="tag" data-tag="sale">Sale</p>
                             <p class="tag" data-tag="new-arrival">New Arrival</p>
                         </div>
-                        <div class="category-container">
+                        <div class="category-container hidden">
                         <p class="category" data-category="t-shirt">T-shirt</p>
                         <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
                         <p class="category" data-category="womens-activewear">Women's Activewear</p>
@@ -231,7 +253,10 @@
                         </div>
                         <div class="product-desc">
                             <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
-                                read more <span class="fa fa-chevron-right"></span>
+                                read more<span class="fa fa-chevron-right"></span>
+                            </a>
+                            <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                add to cart<span class="fa fa-chevron-right"></span>
                             </a>
                         </div>
                     </div>
@@ -252,10 +277,11 @@
                         Hanes Women's Cool Dri Shirt
                         </h2>
                         <div class="tag-container">
+                            <p class="tag" data-tag="best-seller">Best</p>
                             <p class="tag" data-tag="sale">Sale</p>
                             <p class="tag" data-tag="new-arrival">New Arrival</p>
                         </div>
-                        <div class="category-container">
+                        <div class="category-container hidden">
                         <p class="category" data-category="t-shirt">T-shirt</p>
                         <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
                         <p class="category" data-category="womens-activewear">Women's Activewear</p>
@@ -263,7 +289,10 @@
                         </div>
                         <div class="product-desc">
                             <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
-                                read more <span class="fa fa-chevron-right"></span>
+                                read more<span class="fa fa-chevron-right"></span>
+                            </a>
+                            <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                add to cart<span class="fa fa-chevron-right"></span>
                             </a>
                         </div>
                     </div>
@@ -284,10 +313,11 @@
                         Hanes Women's Cool Dri Shirt
                         </h2>
                         <div class="tag-container">
+                            <p class="tag" data-tag="best-seller">Best</p>
                             <p class="tag" data-tag="sale">Sale</p>
                             <p class="tag" data-tag="new-arrival">New Arrival</p>
                         </div>
-                        <div class="category-container">
+                        <div class="category-container hidden">
                         <p class="category" data-category="t-shirt">T-shirt</p>
                         <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
                         <p class="category" data-category="womens-activewear">Women's Activewear</p>
@@ -295,7 +325,10 @@
                         </div>
                         <div class="product-desc">
                             <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
-                                read more <span class="fa fa-chevron-right"></span>
+                                read more<span class="fa fa-chevron-right"></span>
+                            </a>
+                            <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                add to cart<span class="fa fa-chevron-right"></span>
                             </a>
                         </div>
                     </div>
@@ -316,10 +349,11 @@
                         Hanes Women's Cool Dri Shirt
                         </h2>
                         <div class="tag-container">
+                            <p class="tag" data-tag="best-seller">Best</p>
                             <p class="tag" data-tag="sale">Sale</p>
                             <p class="tag" data-tag="new-arrival">New Arrival</p>
                         </div>
-                        <div class="category-container">
+                        <div class="category-container hidden">
                         <p class="category" data-category="t-shirt">T-shirt</p>
                         <p class="category" data-category="moisture-wicking">Moisture-Wicking</p>
                         <p class="category" data-category="womens-activewear">Women's Activewear</p>
@@ -327,7 +361,10 @@
                         </div>
                         <div class="product-desc">
                             <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
-                                read more <span class="fa fa-chevron-right"></span>
+                                read more<span class="fa fa-chevron-right"></span>
+                            </a>
+                            <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                add to cart<span class="fa fa-chevron-right"></span>
                             </a>
                         </div>
                     </div>
