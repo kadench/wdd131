@@ -36,7 +36,6 @@ const products = [
         newArrival: false,
         bestSeller: true,
         sale: true,
-        
     }
 ];
 
@@ -56,23 +55,26 @@ function toggleGeneralTagsHandler() {
     });
 };
 
-function menuHandler() {
+function toggleMobileMenu() {
     const mobileList = document.querySelector(".mobile-list");
-    const desktopList = document.querySelector("desktop-menu");
+    mobileList.classList.toggle("hidden");
+}
+
+function setShownMenu() {
+    const mobileList = document.querySelector(".mobile-list");
+    const desktopList = document.querySelector(".desktop-menu");
     const hamburgerIcon = document.querySelector(".hamburger");
 
     if (window.innerWidth < 768) {
-        mobileList.classList.remove("hidden");
-        hamburgerIcon.style.userSelect = "all";
-        hamburgerIcon.style.zIndex = "1";
+        mobileList.classList.add("hidden");
+        hamburgerIcon.classList.remove("hidden")
+        desktopList.classList.add("hidden");
     } else {
         mobileList.classList.add("hidden");
-        desktopList.classList.remove("hidden")
-        hamburgerIcon.style.userSelect = "none";
-        hamburgerIcon.style.zIndex = "-1";
-        pageLinks.classList.add("desktop-menu");
+        desktopList.classList.remove("hidden");
+        hamburgerIcon.classList.add("hidden")
     }
-};
+}
 
 function formCloseHandler() {
     const asideChevron = document.querySelector(".close-form");
@@ -81,8 +83,7 @@ function formCloseHandler() {
     formDiv.classList.toggle("hidden");
     asideChevron.classList.toggle("fa-chevron-up");
     asideChevron.classList.toggle("fa-chevron-down");
-
-};
+}
 
 // Define the icons for the document to find
 const hamburgerIcon = document.querySelector(".hamburger");
@@ -97,17 +98,14 @@ generalTagCheck.addEventListener("change", toggleGeneralTagsHandler);
 
 // Make a resize event to ensure the window is desktop size to show the menu
 document.addEventListener("DOMContentLoaded", () => {
-    window.addEventListener("resize", menuHandler);
-    window.addEventListener("load", menuHandler);
+    window.addEventListener("resize", setShownMenu);
+    window.addEventListener("load", setShownMenu);
 });
 
-// Add event listers to the button to open the page links on mobile and desktop
-hamburgerIcon.addEventListener("click", menuHandler); 
-hamburgerIcon.addEventListener("touch", menuHandler);
+// Add event listeners to the button to open the page links on mobile
+hamburgerIcon.addEventListener("click", toggleMobileMenu); 
+hamburgerIcon.addEventListener("touch", toggleMobileMenu);
 
 // Add event listeners to the close form arrow.
 asideChevron.addEventListener("click", formCloseHandler);
 asideChevron.addEventListener("touch", formCloseHandler);
-
-
-
