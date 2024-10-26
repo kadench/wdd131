@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Kaden Hansen's final project for WDD131">
     <meta name="author" content="Kaden Hansen">
-    <meta property="og:title" content="WDD131 Final | Store Catalog Final">
+    <meta property="og:title" content="WDD131 Final | Store Catalog">
     <meta property="og:type" content="website">
     <meta
         property="og:description"
@@ -17,8 +17,7 @@
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="manifest" href="images/site.webmanifest">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
     <link rel="stylesheet" href="main.css">
     <title>Store Catalog | Catalog</title>
     <script src="catalog.js" defer></script>
@@ -51,6 +50,10 @@
                 </a>
                 <div class="cart">
                     <img src="images/cart-icon.svg" alt="go to cart">
+                    <div class="incart-circle">
+                        <span class="fas fa-boxes hidden cart-amount-icon"></span>
+                        <span class="cart-amount"></span> 
+                    </div>                    
                 </div>
             </div>
             <ul class="mobile-list">
@@ -143,12 +146,12 @@
                         <label for="productDescToggle">Product Descriptions</label>
                     </p>
                     <p class="general-tags-section">
-                        <input type="checkbox" id="toggleGeneralTags" name="toggle-general-tags">
-                        <label for="toggleGeneralTags">General Tags</label>
+                        <input type="checkbox" id="toggleSpecialTags" name="toggle-special-tags">
+                        <label for="toggleSpecialTags">Special Tags</label>
                     </p>
                     <p class="category-tags-section">
                         <input type="checkbox" id="toggleCategoryTags" name="toggle-category-tags">
-                        <label for="toggleCategoryTags">Catagory Tags</label>
+                        <label for="toggleCategoryTags">Category Tags</label>
                     </p>
                     </div>
                 </form>
@@ -159,6 +162,52 @@
                 <img src="images/catalog-h1.svg" alt="main heading reading 'catalog'">
             </h1>
             <section class="product-grid">
+                <!-- Example content -->
+                <!-- <article class="product-card" data-link="pdp.html/#hanes-womens-cool-dri-shirt">
+                    <div class="product-img-div">
+                        <img class="product-image" src="images/womens_active_t/tee_front.png" alt="women's black active tee with sc logo">
+                    </div>
+                    <div class="product-content">
+                        <div class="price-details">
+                            <div class="product-price">
+                                <span class="discount-percentage">20% off</span>
+                                <span class="price-was">$24.99</span>
+                                <span class="discounted-price">$19.99</span>
+                            </div>
+                        </div>
+                        <h2 class="product-title">
+                        Hanes Women's Cool Dri Shirt
+                        </h2>
+                        <div class="tag-container hidden">
+                            <button class="tag" data-tag="best-seller">Best Seller</button>
+                            <button class="tag" data-tag="sale">Sale</button>
+                            <button class="tag" data-tag="new-arrival">New Arrival</button>
+                        </div>
+                        <div class="product-desc">
+                            <p class="desc-text">
+                                Quick-drying, lightweight active shirt for women..
+                            </p>
+                            <div class="category-container hidden">
+                                <button class="category" data-category="t-shirt" type="button">T-shirt</button>
+                                <button class="category" data-category="moisture-wicking" type="button">Moisture-Wicking</button>
+                                <button class="category" data-category="womens-activewear" type="button">Women's Activewear</button>
+                                <button class="category" data-category="cool-dri" type="button">Cool-Dri</button>
+                            </div>
+                            <div class="product-nav">
+                                <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                                    view product<span class="fa fa-chevron-right"></span>
+                                </a>
+                                <button class="other-page-link"
+                                        data-add-to-cart
+                                        type="button"
+                                        aria-label="Add this product to your cart"
+                                        >
+                                    add to cart<span class="fa fa-chevron-right"></span>
+                                </button>                                
+                            </div>
+                        </div>
+                    </div>
+                </article> -->
             </section>
         </main>
     </div>

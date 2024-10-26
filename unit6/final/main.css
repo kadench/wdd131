@@ -134,9 +134,39 @@ img {
   background-color: var(--nav-hover-background-color);
 }
 
+.grow-shake {
+  animation: grow-shake 0.5s ease;
+}
+
 .cart {
   display: flex;
   padding: .5em .6em;
+}
+
+.incart-circle {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%; /* Circular shape */
+  background-color: var(--accent1-color);
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.cart-amount {
+  display: flex;
+}
+
+.hidden.cart-amount {
+  display: none;
+}
+
+.cart-amount-icon {
+  font-size: 0.8rem;
 }
 
 .cart img {
@@ -464,24 +494,27 @@ main {
   width: 100%;
 }
 
-.product-nav a {
+.product-nav a, .product-nav button {
   color: var(--paragraph-color-on-white);
-  text-decoration: none;
-  font-size: 1em;
   width: 20%;
-  font-weight: 700;
-  letter-spacing: 1px;
+  margin: 0 5px;
   padding: 10px 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1em;
+  letter-spacing: 1px;
+  border: none;
+  background-color: white;
   border-radius: 70px;
   flex-grow: 1;
   text-align: center;
-  margin: 0 5px;
 }
 
-.product-nav a:hover {
+.product-nav a:hover,
+.product-nav button:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
-
 
 .other-page-link span {
   margin-left: .3em;
@@ -767,4 +800,15 @@ footer {
   .aside-titlebar {
     width: 80%;
   }
+}
+
+/* CSS Animations */
+
+/* Shake the cart-amount circle when something was added */
+@keyframes grow-shake {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.2); }
+  50% { transform: scale(1) rotate(5deg); }
+  70% { transform: scale(1.2) rotate(-5deg); }
+  100% { transform: scale(1); }
 }
