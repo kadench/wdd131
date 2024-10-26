@@ -109,3 +109,61 @@ hamburgerIcon.addEventListener("touch", toggleMobileMenu);
 // Add event listeners to the close form arrow.
 asideChevron.addEventListener("click", formCloseHandler);
 asideChevron.addEventListener("touch", formCloseHandler);
+
+// Format and place the cards dynamically on page based on each given product (x2 to fill out grid)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <article class="product-card" data-link="pdp.html/#hanes-womens-cool-dri-shirt">
+    <div class="product-img-div">
+        <img class="product-image" src="images/womens_active_t/t_front.png" alt="women's black active tee with sc logo">
+    </div>
+    <div class="product-content">
+        <div class="price-details">
+            <div class="product-price">
+                <span class="discount-percentage">20% off</span>
+                <span class="price-was">$24.99</span>
+                <span class="discounted-price">$19.99</span>
+            </div>
+        </div>
+        <h2 class="product-title">
+        Hanes Women's Cool Dri Shirt
+        </h2>
+        <div class="tag-container hidden">
+            <button class="tag" data-tag="best-seller">Best Seller</button>
+            <button class="tag" data-tag="sale">Sale</button>
+            <button class="tag" data-tag="new-arrival">New Arrival</button>
+        </div>
+        <div class="product-desc">
+            <p class="desc-text">
+                Quick-drying, lightweight active shirt for women..
+            </p>
+            <div class="category-container hidden">
+                <button class="category" data-category="t-shirt" type="button">T-shirt</button>
+                <button class="category" data-category="moisture-wicking" type="button">Moisture-Wicking</button>
+                <button class="category" data-category="womens-activewear" type="button">Women's Activewear</button>
+                <button class="category" data-category="cool-dri" type="button">Cool-Dri</button>
+            </div>
+            <div class="product-nav">
+                <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                    view product<span class="fa fa-chevron-right"></span>
+                </a>
+                <a class="other-page-link" href="pdp.html/#hanes-womens-cool-dri-shirt">
+                    add to cart<span class="fa fa-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</article>  */}
