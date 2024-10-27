@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kaden Hansen's final project for WDD131">
+    <meta name="author" content="Kaden Hansen">
+    <meta property="og:title" content="WDD131 Final | Store Catalog">
+    <meta property="og:type" content="website">
+    <meta
+        property="og:description"
+        content="This is a mockup store catalog made for the WDD131 Final">
+    <meta property="og:image" content="images\small_banner_logo.png">
+    <meta property="og:url" content="https://kadench.github.io/wdd131/unit6/final/index.html">
+    <meta name="twitter:card" content="Store Catalog main logo">
+    <link rel="icon" type="image/png" href="images/favicon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
+    <link rel="stylesheet" href="pdp.css">
+    <title>Store Catalog | PDP</title>
+    <script src="pdp.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="home-link" href="index.html">
+            <div class="main-logo">
+                <img src="images/banner_logo.png" alt="home link">
+            </div>
+        </a>
+        <nav class="main-nav">
+            <div class="nav-content">
+                <ul class="desktop-menu hidden">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Catalog</a>
+                    </li>
+                    <li>
+                        <a href="#">Clothing</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                <a href="#" class="hamburger">
+                    <span class="fa fa-bars"></span>
+                </a>
+                <div class="cart">
+                    <img src="images/cart-icon.svg" alt="go to cart">
+                    <div class="incart-circle">
+                        <span class="fas fa-boxes hidden cart-amount-icon"></span>
+                        <span class="cart-amount"></span> 
+                    </div>                    
+                </div>
+            </div>
+            <ul class="mobile-list">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="index.html">Catalog</a>
+                </li>
+                <li>
+                    <a href="#">Clothing</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article class="product-container">
+            <div class="go-back">
+                <span class="fa fa-chevron-left close-form" aria-label="go back to catalog page"></span>
+                <p class="back-text">back</p>
+            </div>
+            <div class="image-collage-container">
+                <section class="spotlight">
+                    <img src="images/mens_active_hoodie/hoodie_front.png" alt="Highlighted front view of the hoodie">
+                </section>
+                <section class="image-line">
+                    <img src="images/mens_active_hoodie/hoodie_front.png" alt="Front view of the hoodie">
+                    <img src="images/mens_active_hoodie/hoodie_back.png" alt="Back view of the hoodie">
+                </section>
+            </div>
+            
+            <div class="product-content">
+                <h1 class="product-title"></h1>
+                
+                <div class="tag-section">
+                    
+                    <p class="tag">tag1</p>
+                    <p class="tag">tag2</p>
+                    <p class="tag">tag3</p>
+                    <p class="tag">tag4</p>
+                    <p class="tag">tag5</p>
+                </div>
+                
+                <div class="description-title-price">
+                    <div class="product-price">
+                        <div class="product-price">
+                                <span class="discount-percentage">46% off</span>
+                                <span class="price-was">$29.99</span>
+                                <span class="discounted-price">$15.99</span>
+                        </div>
+                    </div>
+                    <h2>Description:</h2>
+                </div>
+                
+                <div class="product-desc">
+                    <p class="desc-text">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem blanditiis, tenetur debitis eius odit cumque
+                        accusamus vero optio aspernatur itaque repudiandae rem sapiente unde ratione voluptates, numquam dicta voluptas
+                        atque?
+                    </p>
+                </div>
+                
+                <form action="#">
+                    <section class="button-grid">
+                        <button class="size-button" type="button">XS</button>
+                        <button class="size-button" type="button">S</button>
+                        <button class="size-button" type="button">M</button>
+                        <button class="size-button" type="button">L</button>
+                        <button class="size-button" type="button">XL</button>
+                        <button class="size-button" type="button">2X</button>
+                    </section>
+                    
+                    <section class="quantity-cart">
+                        <div class="quantity-bar">
+                            <span class="fa-solid fa-minus" onclick="decreaseQuantity()"></span>
+                            <input type="number" class="quantity-input" min="1" value="1">
+                            <span class="fa-solid fa-plus" onclick="increaseQuantity()"></span>
+                        </div>
+                        <button class="add-to-cart" type="button">Add to Cart</button>
+                    </section>
+                </form>
+            </div>
+        </article>        
+    </main>
+<footer>
+    <p class="copyright">
+        All Rights Reserved © Store Catalog 2024
+    </p>
+</footer>
+</body>
+</html>
