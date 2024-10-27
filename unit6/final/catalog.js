@@ -515,9 +515,10 @@ placeProducts(productCatalog);
 // Call the function to bind "Add to Cart" event listeners
 bindAddToCartEvents();
 
-// Define all of the special tag button
-const productGrid = document.querySelector(".product-grid");
 
+
+// Make an event listener that will update the content for the form
+const productGrid = document.querySelector(".product-grid");
 productGrid.addEventListener("click", function (event) {
     const target = event.target;
 
@@ -525,18 +526,23 @@ productGrid.addEventListener("click", function (event) {
     if (target.classList.contains("tag")) {
         handleSpecialTagClick(target);
     }
+    
     // Check if the click is on a category button
     else if (target.classList.contains("category")) {
         handleCategoryTagClick(target);
     }
+    
+    // Redirect to the PDP if the click is on a product card but not on a tag or category button
+    else {
+        const productCard = target.closest(".product-card");
+        if (productCard) {
+            const pdpLink = productCard.getAttribute("data-link");
+            if (pdpLink) {
+                window.location.href = pdpLink;
+            }
+        }
+    }
 });
-
-
-
-
-// Form filtering
-
-// Make an event listener that will update the content for the form
 
 // Show or hide gender specific material
 const womensWearCheck = document.getElementById("womensWearCheck");

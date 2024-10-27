@@ -46,6 +46,10 @@
   display: none;
 }
 
+body {
+  background-color: var(--accent2-color);
+}
+
 h1 {
   display: flex;
   color: var(--secondary-color);
@@ -224,19 +228,23 @@ main {
 .go-back {
   display: flex;
   width: 100%;
+  text-decoration: none;
 }
 
 .go-back:hover {
   background-color: #E7E7E7;
+  cursor: pointer;
 }
 
 .go-back span {
   margin: .7em;
   align-content: center;
+  color: var(--primary-color);
 }
 
 .go-back p {
   font-family: var(--heading-font);
+  color: var(--primary-color);
   align-self: center;
 }
 
@@ -246,6 +254,8 @@ img {
 
 h1 {
   height: fit-content;
+  font-size: 30px;
+  margin: 0 .7em;
 }
 
 .spotlight {
@@ -269,21 +279,15 @@ h1 {
   border: .1em solid var(#151515);
 }
 
-h1 {
-  margin: 0 .7em;
-}
-
 p {
   font-family: var(--paragraph-font);
 }
 
 .tag-section h2 {
+  box-sizing: border-box;
+  margin-top: 5em;
   margin-left: 1em;
-  font-size: .9em;
-}
-
-.tag-section {
-display: none;
+  font-size: 1.4em;
 }
 
 .tag-list {
@@ -307,15 +311,18 @@ display: none;
   box-shadow: 0 2px 8px #0000001a;
 }
 
-.description-title-price {
+.flex-container {
   display: block;
   margin: 0 .8em;
   margin-top: 1em;
 }
 
-.description-title-price h2 {
-  margin-bottom: 0;
+.flex-container h2 {
+  display: block;
+  margin: 0 .3em;
+  margin-top: 1em;
 }
+
 
 .price {
   font-size: 20px;
@@ -346,10 +353,9 @@ display: none;
   margin-left: .4em;
 }
 
-
 .product-desc .desc-text {
-  margin: .6em .7em;
-  font-size: 1em;
+  margin: .8em .6em .8em 1em;
+  font-size: 1.2em;
   line-height: 2em;
 }
 
@@ -373,9 +379,26 @@ display: none;
   border: none;
 }
 
+.button-grid button:hover {
+  cursor: pointer;
+  background-color: #6d6d6d;
+}
+
 .quantity-cart {
   display: flex;
   flex-direction: column;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.button-grid button.disabled {
+  background-color: #6d6d6d;
+}
+
+.button-grid button.disabled:hover {
+  cursor: not-allowed;
 }
 
 span.fa-minus,
@@ -387,6 +410,7 @@ span.fa-plus {
 
 span.fa-minus:hover,
 span.fa-plus:hover {
+  cursor: pointer;
   background-color: #E7E7E7;
   padding: .84em;
 }
@@ -456,6 +480,9 @@ footer {
     background-color: var(--nav-hover-background-color);
   }
 
+  .go-back {
+    font-size: 1.4em;
+  }
 
   .tag-container {
     display: flex;
@@ -479,6 +506,16 @@ footer {
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 2px 8px #0000001a;
   }
+  
+  .product-desc .desc-text {
+    margin-right: .64em;
+  }
+
+  .button-grid button {
+    width: 48px;
+    height: 48px;
+    font-size: 1em;
+  }
 }
 
 @media screen and (min-width: 465px) {
@@ -498,20 +535,111 @@ footer {
   .cart {
     padding: 1.6em;
   }
-}
 
+  .image-line img {
+    width: 150px;
+  }
+
+  .product-content {
+    margin: 0 1em;
+  }
+
+  .product-content h1 {
+    font-size: 2.5em;
+  }
+
+  .button-grid button {
+    width: 70px;
+    height: 70px;
+    font-size: 1.4em;
+    align-items: center;
+  }
+
+  .flex-container {
+    display: block;
+    margin: 0 .8em;
+    margin-top: 1em;
+  }
+  
+  .flex-container h2 {
+    display: block;
+    font-size: 2em;
+    margin: 0 .3em;
+    margin-top: 1em;
+  }
+  
+  
+  .price {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .discount-percentage {
+    background-color: var(--secondary-color);
+    color: #F2F2F2;
+    padding: .24em;
+    margin-left: .3em;
+    font-size: 2em;
+  }
+  
+  .price-was {
+    text-decoration: line-through;
+    align-self: center;
+    font-size: 2.2em;
+    color: #6d6d6d;
+    margin-left: .4em;
+  }
+  
+  
+  .discounted-price {
+    align-self: center;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-left: .4em;
+  }
+  
+  .product-desc .desc-text {
+    margin: .8em .6em .8em 1em;
+    font-size: 1.7em;
+    line-height: 2em;
+  }
+
+  .quantity-cart {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .quantity-bar {
+    margin: .8em;
+    margin-right: 2em;
+  }
+
+  .quantity-input {
+    padding: 1.5em;
+  }
+  
+  .add-to-cart {
+    align-items: center;
+    margin: 1.5em;
+    width: 35%;
+    padding: .8em;
+    font-size: 1.5em;
+    margin-left: 2em;
+  }
+}
 
 @media screen and (min-width: 1024px) {
   .hamburger {
     user-select: none;
     z-index: -1;
   }
-
+  
   .mobile-list {
     display: flex;
     z-index: 1;
   }
-
+  
   .desktop-menu li a {
     font-size: 1.7em;
     padding: 0;
@@ -522,8 +650,234 @@ footer {
     margin: .5em;
     font-size: 16px;
   }
+
+  .product-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .image-collage-container {
+    display: grid;
+    grid-template-columns: 1.5fr 5fr;
+    align-items: start;
+  }
+
+  .image-line {
+      display: flex;
+      margin: .7em;
+      flex-direction: column;
+      gap: 1rem;
+      
+  }
+
+  .image-line img {
+      width: 100%;
+     
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.3s ease;
+  }
+
+  .image-line img:hover {
+      border-color: #ccc;
+  }
+
+  .spotlight {
+      display: flex;
+      width: fit-content;
+      grid-column: 2;
+      grid-row: 1;
+  }
+
+  .spotlight img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  .product-content {
+    margin: 0 1em;
+  }
+
+  .product-content h1 {
+    font-size: 2em;
+  }
+
+  .button-grid button {
+    width: 55px;
+    height: 55px;
+    font-size: 1.1em;
+    align-items: center;
+  }
+
+  .flex-container {
+    display: block;
+    margin: 0 0.6em;
+    margin-top: 0.8em;
+  }
+
+  .flex-container h2 {
+    display: block;
+    font-size: 1.6em;
+    margin: 0 0.2em;
+    margin-top: 0.8em;
+  }
+
+  .price {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .discount-percentage {
+    background-color: var(--secondary-color);
+    color: #F2F2F2;
+    padding: 0.18em;
+    margin-left: 0.2em;
+    font-size: 1.6em;
+  }
+
+  .price-was {
+    text-decoration: line-through;
+    align-self: center;
+    font-size: 1.8em;
+    color: #6d6d6d;
+    margin-left: 0.3em;
+  }
+
+  .discounted-price {
+    align-self: center;
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-left: 0.3em;
+  }
+
+  .product-desc .desc-text {
+    margin: 0.6em 0.4em 0.6em 0.8em;
+    font-size: 1.4em;
+    line-height: 1.6em;
+  }
+
+  .quantity-cart {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .quantity-bar {
+    margin: 0.6em;
+    margin-right: 1.6em;
+  }
+
+  .quantity-input {
+    padding: 1.2em;
+  }
+
+  .add-to-cart {
+    align-items: center;
+    margin: 1.2em;
+    width: 28%;
+    padding: 0.6em;
+    font-size: 1.2em;
+    margin-left: 1.6em;
+  }
+
+  footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
 }
 
+@media screen and (min-width: 1440px) {
+  .product-content {
+    margin: 0 1em;
+  }
+
+  
+  .product-content h1 {
+    font-size: 2.5em;
+  }
+
+  .button-grid button {
+    width: 70px;
+    height: 70px;
+    font-size: 1.4em;
+    align-items: center;
+  }
+
+  .flex-container {
+    display: block;
+    margin: 0 .8em;
+    margin-top: 1em;
+  }
+  
+  .flex-container h2 {
+    display: block;
+    font-size: 2em;
+    margin: 0 .3em;
+    margin-bottom: 1em;
+  }
+  
+  
+  .price {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .discount-percentage {
+    background-color: var(--secondary-color);
+    color: #F2F2F2;
+    padding: .24em;
+    margin-left: .3em;
+    font-size: 2em;
+  }
+  
+  .price-was {
+    text-decoration: line-through;
+    align-self: center;
+    font-size: 2.2em;
+    color: #6d6d6d;
+    margin-left: .4em;
+  }
+  
+  
+  .discounted-price {
+    align-self: center;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-left: .4em;
+  }
+  
+  .product-desc .desc-text {
+    margin: .8em .6em .8em 1em;
+    font-size: 1.7em;
+    line-height: 2em;
+  }
+
+  .quantity-cart {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .quantity-bar {
+    margin: .8em;
+    margin-right: 2em;
+  }
+
+  .quantity-input {
+    padding: 1.5em;
+  }
+  
+  .add-to-cart {
+    align-items: center;
+    margin: 1.5em;
+    width: 35%;
+    padding: .8em;
+    font-size: 1.5em;
+    margin-left: 2em;
+  }
+}
 /* CSS Animations */
 
 /* Shake the cart-amount circle when something was added */
