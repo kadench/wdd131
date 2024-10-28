@@ -362,8 +362,8 @@ function formCloseHandler() {
     const formDiv = document.querySelector(".filter-form");
 
     formDiv.classList.toggle("hidden");
-    asideChevron.classList.toggle("fa-chevron-up");
     asideChevron.classList.toggle("fa-chevron-down");
+    asideChevron.classList.toggle("fa-chevron-up");
 }
 
 // Place each product on the grid

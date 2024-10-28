@@ -100,7 +100,7 @@ function toggleMobileMenu() {
 }
 
 // Set which menu is shown when
-function setShownMenu() {
+    function setShownMenu() {
     const mobileList = document.querySelector(".mobile-list");
     const desktopList = document.querySelector(".desktop-menu");
     const hamburgerIcon = document.querySelector(".hamburger");
@@ -109,7 +109,8 @@ function setShownMenu() {
         mobileList.classList.add("hidden");
         hamburgerIcon.classList.remove("hidden");
         desktopList.classList.add("hidden");
-    } else {
+    }
+    else {
         mobileList.classList.add("hidden");
         desktopList.classList.remove("hidden");
         hamburgerIcon.classList.add("hidden");
@@ -131,13 +132,15 @@ function updateCartCount(newCount) {
         if (newCount > 99) {
             cartAmountElement.classList.add("hidden");
             cartAmountIcon.classList.remove("hidden");
-        } else {
+        }
+        else {
             cartAmountElement.classList.remove("hidden");
             cartAmountIcon.classList.add("hidden");
             cartAmountElement.textContent = newCount;
         }
         localStorage.setItem("cartCount", newCount);
-    } else {
+    }
+    else {
         console.error("Cart elements not found in the DOM.");
     }
 }
@@ -375,11 +378,21 @@ function handleSizeButtonClick(event, sizeButtonList) {
 
     if (clickedButton.classList.contains("chosen")) {
         clickedButton.classList.remove("chosen");
-        clickedSizeTitle.textContent = "Size:";
+        clickedSizeTitle.textContent = "Size: unset";
     } else {
         sizeButtonList.forEach(button => button.classList.remove("chosen"));
         clickedButton.classList.add("chosen");
         clickedSizeTitle.textContent = `Size: ${clickedButton.textContent}`;
+    }
+}
+
+function submitHandler(event) {
+    const quantityItem = event.target;
+    const quantity = parseInt(event.target.value);
+
+    if (quantity > 10) {
+        preventDefault();
+        quantityItem.classList.toggle("disabled")
     }
 }
 
@@ -414,7 +427,7 @@ addToCartLink.addEventListener("click", (event) => {
 const imgLineImages = document.querySelectorAll(".image-line img");
 
 imgLineImages.forEach(image => {
-    image.addEventListener("click", (event) => imageSpotlightHandler(event));
+    image.addEventListener("click", imageSpotlightHandler);
 });
 
 // Make the quantity '+' and '-' buttons decrease and increase the value
@@ -423,4 +436,9 @@ const minusQuantityButton = document.querySelector(".fa-minus");
 
 plusQuantityButton.addEventListener("click", () => adjustQuantity(true));
 minusQuantityButton.addEventListener("click", () => adjustQuantity(false));
+
+// Make an add to cart submit handler
+const addCartButton = document.querySelector(".add-to-cart");
+
+addCartButton.addEventListener("submit", submitHandler);
 
