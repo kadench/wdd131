@@ -188,6 +188,7 @@ function displayProduct(product) {
         // Update the page's metadata with product info
         metadataHandler(product);
         imagePlacementHandler(product);
+        tagAndCategoryHandler(product);
         descriptionHandler(product);
         sizeButtonAvailability(product);
         // Define the price div
@@ -294,6 +295,60 @@ function adjustQuantity(isIncreasing) {
     }
     
     quantityInput.value = quantityValue;
+}
+
+function tagAndCategoryHandler(product) {
+    // Make all the given tags into an HTML string of special tags
+    function tagHandler(tags) {
+        let tagString = ``;
+        
+        if (tags.bestSeller) {
+            tagString += `<button class="tag" data-tag="best-seller">Best Seller</button>`;
+        }
+        
+        if (tags.sale) {
+            tagString += `<button class="tag" data-tag="sale">Sale</button>`;
+        }
+        
+        if (tags.newArrival) {
+            tagString += `<button class="tag" data-tag="new-arrival">New Arrival</button>`;
+        }
+
+        return tagString;
+    }
+
+    // Make all the given category buttons an HTML string to put in the
+    // template
+    function categoryButtonHandler(categories) {
+
+        let categoriesList = [];
+
+        categories.forEach((category) => {
+            const categoryButton = `<button
+                                        class="category"
+                                        data-category="${category}"
+                                        type="button"
+                                    >
+                                        ${category}
+                                    </button>`;
+            categoriesList.push(categoryButton);
+        });
+        
+        const categoryButtons = categoriesList.join("");
+
+        return categoryButtons;
+    }
+
+    const tagAndCategoryDiv = document.querySelector(".tag-section");
+    const tagString = tagHandler(product.tags);
+    const categoryString = categoryButtonHandler(product.categories);
+    const tagsH2 = `<h2>
+                        Tags:
+                    </h2>`;
+
+    let combinedTagString = tagsH2 + tagString + categoryString;
+
+    tagAndCategoryDiv.innerHTML = combinedTagString;
 }
 
 // Styles the buttons and shows the user which size they chose
