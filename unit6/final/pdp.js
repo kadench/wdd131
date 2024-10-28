@@ -12,7 +12,8 @@ const productCatalog = {
                 with advanced moisture-wicking fabric to keep you sweat-free during intense 
                 activities. The soft, lightweight material offers flexibility while maintaining 
                 warmth. Perfect for layering or wearing on its own during cooler weather.`,
-            imgPath: "images/mens_active_hoodie/hoodie_front.png",
+            frontImgPath: "images/mens_active_hoodie/hoodie_front.png",
+            backImgPath: "images/mens_active_hoodie/hoodie_back.png",
             imgAlt: "a man faces forward wearing a black sport tek hoodie that has the store logo on it",
             categories: ["hoodie", "moisture-wicking", "men's activewear", "pullover"],
             shortDescription: "Moisture-wicking pullover hoodie for active use.",
@@ -40,7 +41,8 @@ const productCatalog = {
                 Whether you're pushing through an intense workout or enjoying outdoor 
                 activities, this shirt offers lightweight comfort and dries quickly, making 
                 it a perfect fit for your active lifestyle.`,
-            imgPath: "images/womens_active_t/tee_front.png",
+            frontImgPath: "images/womens_active_t/tee_front.png",
+            backImgPath: "images/womens_active_t/tee_back.png",
             imgAlt: "a woman faces forward wearing a black cool dry shirt that has the store logo on it",
             categories: ["t-shirt", "moisture-wicking", "women's activewear", "cool-dri"],
             shortDescription: "Quick-drying, lightweight active shirt for women.",
@@ -67,7 +69,8 @@ const productCatalog = {
                 fit and feel with its soft fleece material, making it perfect for layering 
                 or wearing casually. Whether you're lounging or staying active, this 
                 sweatshirt is designed to provide warmth and comfort throughout the day.`,
-            imgPath: "images/mens_sweat_shirt/sweatshirt_front.png",
+            frontImgPath: "images/mens_sweat_shirt/sweatshirt_front.png",
+            backImgPath: "images/mens_sweat_shirt/sweatshirt_back.png",
             imgAlt: "a man faces forward wearing a black sweatshirt that has the store logo on it",
             categories: ["sweatshirt", "crewneck", "casual", "layering"],
             shortDescription: "Casual fleece crewneck sweatshirt for layering.",
@@ -83,89 +86,6 @@ const productCatalog = {
                 S: true,
                 M: true,
                 L: true,
-                XL: false,
-                "2X": true
-            }
-        },
-        {
-            id: "12267",
-            name: "Black Sport-Tek Sport-Wick United Performance Pullover Hoodie",
-            description: `Stay dry and comfortable during every workout with the Sport-Tek
-                Sport-Wick United Performance Pullover Hoodie. This hoodie is crafted 
-                with advanced moisture-wicking fabric to keep you sweat-free during intense 
-                activities. The soft, lightweight material offers flexibility while maintaining 
-                warmth. Perfect for layering or wearing on its own during cooler weather.`,
-            imgPath: "images/mens_active_hoodie/hoodie_front.png",
-            imgAlt: "a man faces forward wearing a black sport tek hoodie that has the store logo on it",
-            categories: ["hoodie", "moisture-wicking", "men's activewear", "pullover"],
-            shortDescription: "Moisture-wicking pullover hoodie for active use.",
-            priceWas: null,
-            price: 39.99,
-            tags: {
-                newArrival: false,
-                bestSeller: true,
-                sale: false
-            },
-            sizes: {
-                XS: true,
-                S: true,
-                M: false,
-                L: true,
-                XL: true,
-                "2X": false
-            }
-        },
-        {
-            id: "12268",
-            name: "Black Hanes Women's Sport Cool Dri Performance Shirt",
-            description: `Hanes Women's Sport Cool Dri Performance Shirt is designed with
-                advanced moisture-wicking technology to keep you cool and comfortable. 
-                Whether you're pushing through an intense workout or enjoying outdoor 
-                activities, this shirt offers lightweight comfort and dries quickly, making 
-                it a perfect fit for your active lifestyle.`,
-            imgPath: "images/womens_active_t/tee_front.png",
-            imgAlt: "a woman faces forward wearing a black cool dry shirt that has the store logo on it",
-            categories: ["t-shirt", "moisture-wicking", "women's activewear", "cool-dri"],
-            shortDescription: "Quick-drying, lightweight active shirt for women.",
-            priceWas: 16.99,
-            price: 9.99,
-            tags: {
-                newArrival: true,
-                bestSeller: false,
-                sale: true
-            },
-            sizes: {
-                XS: false,
-                S: true,
-                M: false,
-                L: true,
-                XL: true,
-                "2X": false
-            }
-        },
-        {
-            id: "12269",
-            name: "Black Port & Company Core Crewneck Sweatshirt",
-            description: `The Black Port & Company Core Crewneck Sweatshirt offers a classic 
-                fit and feel with its soft fleece material, making it perfect for layering 
-                or wearing casually. Whether you're lounging or staying active, this 
-                sweatshirt is designed to provide warmth and comfort throughout the day.`,
-            imgPath: "images/mens_sweat_shirt/sweatshirt_front.png",
-            imgAlt: "a man faces forward wearing a black sweatshirt that has the store logo on it",
-            categories: ["sweatshirt", "crewneck", "casual", "layering"],
-            shortDescription: "Casual fleece crewneck sweatshirt for layering.",
-            priceWas: 29.99,
-            price: 15.99,
-            tags: {
-                newArrival: false,
-                bestSeller: true,
-                sale: true
-            },
-            sizes: {
-                XS: true,
-                S: true,
-                M: true,
-                L: false,
                 XL: false,
                 "2X": true
             }
@@ -202,17 +122,6 @@ function initializeCartCount() {
     updateCartCount(cartCount);
 }
 
-// Add "Add to Cart" event listeners after placing products
-function bindAddToCartEvents() {
-    const addToCartLinks = document.querySelectorAll("[data-add-to-cart]");
-    addToCartLinks.forEach((link) => {
-        link.addEventListener("click", (event) => {
-            event.preventDefault();
-            addItemToCart();
-        });
-    });
-}
-
 // Update the cart display based on the new count and save to localStorage
 function updateCartCount(newCount) {
     const cartAmountElement = document.querySelector(".cart-amount");
@@ -234,9 +143,12 @@ function updateCartCount(newCount) {
 }
 
 // Increase cart count, update the display, and add animation effects
-function addItemToCart() {
+function addItemToCart(quantity) {
+    quantity = parseInt(quantity);
+
     let cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
-    cartCount++;
+
+    cartCount += quantity; // adding the given quantity instead of just one
     updateCartCount(cartCount);
 
     // Apply animation to indicate item was added
@@ -271,14 +183,96 @@ function displayProduct(product) {
         return;
     }
 
-    // Target elements on the PDP to populate with product details
-    document.querySelector('.product-title').textContent = product.name;
-    document.querySelector('.product-image').src = product.imgPath;
-    document.querySelector('.product-image').alt = product.imgAlt;
-    document.querySelector('.product-description').textContent = product.description;
-    document.querySelector('.product-price').innerHTML = priceHandler(product); // Reusing your price handler
-    document.querySelector('.product-categories').innerHTML = categoryButtonHandler(product.categories);
-    document.querySelector('.product-tags').innerHTML = tagHandler(product.tags);
+    else {
+
+        // Update the page's metadata with product info
+        metadataHandler(product);
+        imagePlacementHandler(product);
+        descriptionHandler(product);
+        sizeButtonAvailability(product);
+        // Define the price div
+        const priceDiv = document.querySelector(".product-price");
+        priceDiv.innerHTML = priceHandler(product);
+
+        // Target elements on the PDP to populate with product details
+        document.querySelector('.product-title').textContent = product.name;
+    }
+
+}
+
+// PDP Content handler functions
+function metadataHandler(product) {
+    // Description and author metadata
+    document.querySelector('meta[name="description"]').setAttribute("content", product.shortDescription);
+    document.querySelector('meta[name="author"]').setAttribute("content", "Kaden Hansen");
+
+    // social media sharing metadata
+    document.querySelector('meta[property="og:title"]').setAttribute("content", `${product.name} | Store Catalog`);
+    document.querySelector('meta[property="og:description"]').setAttribute("content", product.description);
+    document.querySelector('meta[property="og:image"]').setAttribute("content", product.frontImgPath);
+    document.querySelector('meta[property="og:url"]').setAttribute("content", productCatalog.getPdpLink(product.id));
+    document.querySelector('meta[name="twitter:card"]').setAttribute("content", "summary_large_image");
+
+    // Title of the page
+    document.querySelector('title').textContent = `${product.name} | Store Catalog`;
+}
+
+// Places the right images in the PDP
+function imagePlacementHandler(product) {
+    // Define the sections with the images
+    const spotlightSection = document.querySelector(".spotlight");
+    const imageLineSection = document.querySelector(".image-line");
+
+    // Define the image strings
+    const frontImgString = `<img src="${product.frontImgPath}" alt="person facing forward wearing the ${product.shortDescription.toLowerCase()}">`;
+    const backImgString = `<img src="${product.backImgPath}" alt="person facing backward wearing the ${product.shortDescription.toLowerCase()}">`;
+
+    spotlightSection.innerHTML = frontImgString;
+    imageLineSection.innerHTML = frontImgString + backImgString
+}
+
+function imageSpotlightHandler(event) {
+    const spotlightImage = document.querySelector(".spotlight img");
+    const clickedImage = event.target;
+    console.log(spotlightImage)
+
+    spotlightImage.src = clickedImage.src;
+    spotlightImage.alt = clickedImage.alt;
+
+}
+
+// Handles the price string shown
+function priceHandler(product) {
+    const currentPrice = product.price;
+    const originalPrice = product.priceWas;
+    const isDiscounted = product.tags.sale;
+
+    let discountPercentage = null;
+    let priceTemplateString = ``;
+
+    if (isDiscounted) {
+        discountPercentage = Math.floor(((originalPrice - currentPrice) / originalPrice) * 100);
+
+        priceTemplateString =   `<span class="discount-percentage">${discountPercentage}% off</span>
+                                <span class="price-was">$${originalPrice}</span>
+                                <span class="discounted-price">$${currentPrice}</span>`
+    }
+    else {
+        priceTemplateString = `<span class="price">$${currentPrice}</span>`;
+    }
+
+    return priceTemplateString;
+}
+
+// Add the description text to the description
+function descriptionHandler(product) {
+    const productDescription = document.querySelector(".product-desc");
+    const descriptionString = `<p class="desc-text">
+                                    ${product.description}
+                                </p>`
+
+    productDescription.innerHTML = descriptionString
+
 }
 
 // Function to initialize the PDP with the correct product details
@@ -288,9 +282,57 @@ function initializePDP() {
     displayProduct(product);
 }
 
-// Call initializePDP on page load
+// Changes the value in the quantity input when either '+' or '-' is clicked.
+function adjustQuantity(isIncreasing) {
+    const quantityInput = document.getElementById("itemQuantity");
+    let quantityValue = parseInt(quantityInput.value) || 1;
+
+    if (isIncreasing) {
+        quantityValue++;
+    } else if (quantityValue > 1) {
+        quantityValue--;
+    }
+    
+    quantityInput.value = quantityValue;
+}
+
+// Styles the buttons and shows the user which size they chose
+function sizeButtonAvailability(product) {
+    const sizeButtonList = Array.from(document.querySelectorAll(".size-button"));
+    const availableSizes = Object.keys(product.sizes).filter(size => product.sizes[size]);
+    
+    sizeButtonList.forEach(button => {
+        if (!availableSizes.includes(button.textContent)) {
+            button.classList.add("disabled");
+            button.disabled = true;
+            button.setAttribute("title", `${button.textContent} is out of stock`);
+        } else {
+            button.disabled = false;
+            button.removeAttribute("title");
+            button.addEventListener("click", (event) => handleSizeButtonClick(event, sizeButtonList));
+        }
+    });
+}
+
+function handleSizeButtonClick(event, sizeButtonList) {
+    const clickedButton = event.target;
+    const clickedSizeTitle = document.querySelector("form h2");
+
+    if (clickedButton.classList.contains("chosen")) {
+        clickedButton.classList.remove("chosen");
+        clickedSizeTitle.textContent = "Size:";
+    } else {
+        sizeButtonList.forEach(button => button.classList.remove("chosen"));
+        clickedButton.classList.add("chosen");
+        clickedSizeTitle.textContent = `Size: ${clickedButton.textContent}`;
+    }
+}
+
 // Define all resize events
+// Call initializePDP on page load
 window.addEventListener("load", initializePDP); // Update the page with the query's information
+
+// Make sure menu and cart is initialized when page is loaded or resized 
 window.addEventListener("resize", setShownMenu); // Show or hide the mobile menu on resize
 window.addEventListener("load", setShownMenu); // Show or hide the mobile menu on load
 window.addEventListener("load", initializeCartCount); // Initialize the cart's number on page load
@@ -301,4 +343,29 @@ const hamburgerIcon = document.querySelector(".hamburger");
 // Add event listeners to the button to open the page links on mobile
 hamburgerIcon.addEventListener("click", toggleMobileMenu); 
 hamburgerIcon.addEventListener("touch", toggleMobileMenu);
+
+// Make the add to cart button actually add a number to cart
+const addToCartLink = document.querySelector("[data-add-to-cart]");
+
+addToCartLink.addEventListener("click", (event) => {
+    const productQuantity = document.getElementById("itemQuantity").value;
+    event.preventDefault();
+    addItemToCart(productQuantity);
+});
+
+
+// Can't get this to work.
+// Handle when the images in image-line are clicked
+const imgLineImages = document.querySelectorAll(".image-line img");
+
+imgLineImages.forEach(image => {
+    image.addEventListener("click", (event) => imageSpotlightHandler(event));
+});
+
+// Make the quantity '+' and '-' buttons decrease and increase the value
+const plusQuantityButton = document.querySelector(".fa-plus");
+const minusQuantityButton = document.querySelector(".fa-minus");
+
+plusQuantityButton.addEventListener("click", () => adjustQuantity(true));
+minusQuantityButton.addEventListener("click", () => adjustQuantity(false));
 

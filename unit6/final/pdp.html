@@ -80,7 +80,7 @@
         <article class="product-container">
             <div class="image-collage-container">
                 <section class="spotlight">
-                    <img src="images/mens_active_hoodie/hoodie_front.png" alt="Highlighted front view of the hoodie">
+                    <img src="images/mens_active_hoodie/hoodie_front.png" alt="front view of the hoodie">
                 </section>
                 <section class="image-line">
                     <img src="images/mens_active_hoodie/hoodie_front.png" alt="Front view of the hoodie">
@@ -131,14 +131,19 @@
                         <button class="size-button" type="button">XL</button>
                         <button class="size-button" type="button">2X</button>
                     </section>
+
+                    <h2>Size: </h2>
                     
                     <section class="quantity-cart">
                         <div class="quantity-bar">
-                            <span class="fa-solid fa-minus" onclick="decreaseQuantity()"></span>
-                            <input type="number" class="quantity-input" min="1" value="1">
-                            <span class="fa-solid fa-plus" onclick="increaseQuantity()"></span>
+                            <label class="quantity-label" for="itemQuantity">quantity</label>
+                            <button class="fa-solid fa-minus" type="button" aria-label="decrease product quantity"></button>
+                            <input id="itemQuantity" type="number" class="quantity-input" min="1" value="1">
+                            <button class="fa-solid fa-plus" type="button" aria-label="increase product quantity"></button>
                         </div>
-                        <button class="add-to-cart" type="button">Add to Cart</button>
+                        <button class="add-to-cart" data-add-to-cart="" type="button" aria-label="Add this product to your cart">
+                            add to cart
+                        </button>
                     </section>
                 </form>
             </div>

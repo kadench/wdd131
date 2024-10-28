@@ -22,6 +22,14 @@ const productCatalog = {
                 newArrival: false,
                 bestSeller: true,
                 sale: false
+            },
+            sizes: {
+                XS: false,
+                S: true,
+                M: true,
+                L: true,
+                XL: true,
+                "2X": false
             }
         },
         {
@@ -42,6 +50,14 @@ const productCatalog = {
                 newArrival: true,
                 bestSeller: false,
                 sale: true
+            },
+            sizes: {
+                XS: true,
+                S: true,
+                M: true,
+                L: false,
+                XL: false,
+                "2X": false
             }
         },
         {
@@ -61,6 +77,14 @@ const productCatalog = {
                 newArrival: false,
                 bestSeller: true,
                 sale: true
+            },
+            sizes: {
+                XS: false,
+                S: true,
+                M: true,
+                L: true,
+                XL: false,
+                "2X": true
             }
         },
         {
@@ -81,6 +105,14 @@ const productCatalog = {
                 newArrival: false,
                 bestSeller: true,
                 sale: false
+            },
+            sizes: {
+                XS: true,
+                S: true,
+                M: false,
+                L: true,
+                XL: true,
+                "2X": false
             }
         },
         {
@@ -101,6 +133,14 @@ const productCatalog = {
                 newArrival: true,
                 bestSeller: false,
                 sale: true
+            },
+            sizes: {
+                XS: false,
+                S: true,
+                M: false,
+                L: true,
+                XL: true,
+                "2X": false
             }
         },
         {
@@ -120,6 +160,14 @@ const productCatalog = {
                 newArrival: false,
                 bestSeller: true,
                 sale: true
+            },
+            sizes: {
+                XS: true,
+                S: true,
+                M: true,
+                L: false,
+                XL: false,
+                "2X": true
             }
         }
     ]
@@ -223,24 +271,30 @@ function setShownMenu() {
     }
 }
 
-// Sets all product cards to the height of the tallest card, recalculating on load and resize
+// Finds the tallest card and adjust all heights to the tallest height for
+// looking ease
 function setUniformCardHeights() {
     const productCards = document.querySelectorAll(".product-card");
-
-    productCards.forEach(card => {
-        card.style.height = "auto";
-    });
-
     let maxHeight = 0;
+
     productCards.forEach(card => {
         maxHeight = Math.max(maxHeight, card.offsetHeight);
     });
 
-    if (maxHeight > 0) {
-        productCards.forEach(card => {
-            card.style.height = `${maxHeight}px`;
-        });
-    }
+    document.documentElement.style.setProperty("--product-card-height", `${maxHeight}px`);
+}
+
+// Creates a resize observer that is triggered when the product-cards change
+// which stops the load and resize event listeners from slowing down performance.
+// Apparently, this is a more standard and better practice approach.
+function observeCardResizing() {
+    const productCards = document.querySelectorAll(".product-card");
+
+    const resizeObserver = new ResizeObserver((entries) => {
+        setUniformCardHeights();
+    });
+
+    productCards.forEach(card => resizeObserver.observe(card));
 }
 
 // Got ChatGPT's help with cart-amount and local storage because I sat here
@@ -279,8 +333,6 @@ function updateCartCount(newCount) {
             cartAmountElement.textContent = newCount;
         }
         localStorage.setItem("cartCount", newCount);
-    } else {
-        console.error("Cart elements not found in the DOM.");
     }
 }
 
@@ -319,11 +371,8 @@ function placeProducts(catalog) {
     const productGrid = document.querySelector(".product-grid");
 
     catalog.products.forEach((product) => {
-
-        const newArticle = document.createElement("article");
-        newArticle.innerHTML = makeHTMLTemplate(product);
-        productGrid.insertAdjacentElement("beforeend", newArticle);
-
+        const productHTML = makeHTMLTemplate(product);
+        productGrid.insertAdjacentHTML("beforeend", productHTML);
     });
 }
 
@@ -353,20 +402,20 @@ function makeHTMLTemplate(product) {
                 <div class="category-container ${hiddenHandler('category')}">
                     ${categoryButtonHandler(product.categories)}
                 </div>
-                <div class="product-nav">
-                    <a class="other-page-link" href="${productCatalog.getPdpLink(product.id)}">
-                        view product<span class="fa fa-chevron-right"></span>
-                    </a>
-                     <button
-                        class="other-page-link"
-                        data-add-to-cart
-                        type="button"
-                        aria-label="Add this product to your cart"
-                        >
-                        add to cart<span class="fa fa-chevron-right"></span>
-                    </button>
-                </div>
             </div>
+        </div>
+        <div class="product-nav">
+            <a class="other-page-link" href="${productCatalog.getPdpLink(product.id)}">
+                view product<span class="fa fa-chevron-right"></span>
+            </a>
+            <button
+                class="other-page-link"
+                data-add-to-cart
+                type="button"
+                aria-label="Add this product to your cart"
+            >
+                add to cart<span class="fa fa-chevron-right"></span>
+            </button>
         </div>
     </article>`;
     
@@ -471,7 +520,6 @@ function handleSpecialTagClick(tagButton) {
     const filteredProducts = productCatalog.products.filter(product =>
         product.tags[clickedTag] === true
     );
-    console.log(filteredProducts)
     placeProducts({ products: filteredProducts });
     setUniformCardHeights();
 }
@@ -494,8 +542,6 @@ function handleCategoryTagClick(categoryButton) {
 window.addEventListener("resize", setShownMenu); // Show or hide the mobile menu on resize
 window.addEventListener("load", setShownMenu); // Show or hide the mobile menu on load
 window.addEventListener("load", initializeCartCount); // Initialize the cart's number on page load
-window.addEventListener("load", setUniformCardHeights); // Make sure all the cards have the same height on load
-window.addEventListener("resize", setUniformCardHeights); // Make sure all the cards have the same height on resize
 
 // Define the items for the document to find
 const hamburgerIcon = document.querySelector(".hamburger");
@@ -511,6 +557,7 @@ asideChevron.addEventListener("touch", formCloseHandler);
 
 // Format and place the cards dynamically on page based on each given products
 placeProducts(productCatalog);
+observeCardResizing();
 
 // Call the function to bind "Add to Cart" event listeners
 bindAddToCartEvents();
@@ -518,6 +565,9 @@ bindAddToCartEvents();
 
 
 // Make an event listener that will update the content for the form
+
+// ChatGPT helped me form this, and walked me through step by step
+// how it works.
 const productGrid = document.querySelector(".product-grid");
 productGrid.addEventListener("click", function (event) {
     const target = event.target;
@@ -532,6 +582,11 @@ productGrid.addEventListener("click", function (event) {
         handleCategoryTagClick(target);
     }
     
+    else if (target.hasAttribute('data-add-to-cart')) {
+        {} // Do nothing as these links are bound to the
+           // cart.
+    }
+
     // Redirect to the PDP if the click is on a product card but not on a tag or category button
     else {
         const productCard = target.closest(".product-card");
