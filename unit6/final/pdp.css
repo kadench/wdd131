@@ -269,7 +269,7 @@ h1.product-title {
 
 .image-line img:hover {
   cursor: pointer;
-  border: .1em solid var(#151515);
+  border: .1em solid var(--primary-color);
 }
 
 p {
@@ -286,7 +286,7 @@ p {
 .tag-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: first baseline;
+  justify-content: flex-end;
 }
 
 .tag, .category {
