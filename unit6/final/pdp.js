@@ -12,8 +12,8 @@ const productCatalog = {
                 with advanced moisture-wicking fabric to keep you sweat-free during intense 
                 activities. The soft, lightweight material offers flexibility while maintaining 
                 warmth. Perfect for layering or wearing on its own during cooler weather.`,
-            frontImgPath: "images/mens_active_hoodie/hoodie_front.png",
-            backImgPath: "images/mens_active_hoodie/hoodie_back.png",
+            frontImgPath: "images/mens_active_hoodie/hoodie_front.webp",
+            backImgPath: "images/mens_active_hoodie/hoodie_back.webp",
             imgAlt: "a man faces forward wearing a black sport tek hoodie that has the store logo on it",
             categories: ["hoodie", "moisture-wicking", "men's activewear", "pullover"],
             shortDescription: "Moisture-wicking pullover hoodie for active use.",
@@ -41,8 +41,8 @@ const productCatalog = {
                 Whether you're pushing through an intense workout or enjoying outdoor 
                 activities, this shirt offers lightweight comfort and dries quickly, making 
                 it a perfect fit for your active lifestyle.`,
-            frontImgPath: "images/womens_active_t/tee_front.png",
-            backImgPath: "images/womens_active_t/tee_back.png",
+            frontImgPath: "images/womens_active_t/tee_front.webp",
+            backImgPath: "images/womens_active_t/tee_back.webp",
             imgAlt: "a woman faces forward wearing a black cool dry shirt that has the store logo on it",
             categories: ["t-shirt", "moisture-wicking", "women's activewear", "cool-dri"],
             shortDescription: "Quick-drying, lightweight active shirt for women.",
@@ -69,8 +69,8 @@ const productCatalog = {
                 fit and feel with its soft fleece material, making it perfect for layering 
                 or wearing casually. Whether you're lounging or staying active, this 
                 sweatshirt is designed to provide warmth and comfort throughout the day.`,
-            frontImgPath: "images/mens_sweat_shirt/sweatshirt_front.png",
-            backImgPath: "images/mens_sweat_shirt/sweatshirt_back.png",
+            frontImgPath: "images/mens_sweat_shirt/sweatshirt_front.webp",
+            backImgPath: "images/mens_sweat_shirt/sweatshirt_back.webp",
             imgAlt: "a man faces forward wearing a black sweatshirt that has the store logo on it",
             categories: ["sweatshirt", "crewneck", "casual", "layering"],
             shortDescription: "Casual fleece crewneck sweatshirt for layering.",
@@ -238,7 +238,6 @@ function imagePlacementHandler(product) {
 function imageSpotlightHandler(event) {
     const spotlightImage = document.querySelector(".spotlight img");
     const clickedImage = event.target;
-    console.log(spotlightImage)
 
     spotlightImage.src = clickedImage.src;
     spotlightImage.alt = clickedImage.alt;
@@ -284,6 +283,13 @@ function initializePDP() {
     const productId = getProductIdFromURL();
     const product = getProductById(productId);
     displayProduct(product);
+
+    // Handle when the images in image-line are clicked
+    const imgLineImages = document.querySelectorAll(".image-line img");
+
+    imgLineImages.forEach(image => {
+        image.addEventListener("click", imageSpotlightHandler);
+    });
 }
 
 // Changes the value in the quantity input when either '+' or '-' is clicked.
@@ -305,16 +311,17 @@ function tagAndCategoryHandler(product) {
     function tagHandler(tags) {
         let tagString = ``;
         
-        if (tags.bestSeller) {
-            tagString += `<button class="tag" data-tag="best-seller">Best Seller</button>`;
+        if (tags.sale) {
+            tagString += `<p class="tag" data-tag="sale">Sale</p>`;
         }
         
-        if (tags.sale) {
-            tagString += `<button class="tag" data-tag="sale">Sale</button>`;
+        if (tags.bestSeller) {
+            tagString += `<p class="tag" data-tag="best-seller">Best Seller</p>`;
         }
+        
         
         if (tags.newArrival) {
-            tagString += `<button class="tag" data-tag="new-arrival">New Arrival</button>`;
+            tagString += `<p class="tag" data-tag="new-arrival">New Arrival</p>`;
         }
 
         return tagString;
@@ -327,13 +334,13 @@ function tagAndCategoryHandler(product) {
         let categoriesList = [];
 
         categories.forEach((category) => {
-            const categoryButton = `<button
+            const categoryButton = `<p
                                         class="category"
                                         data-category="${category}"
                                         type="button"
                                     >
                                         ${category}
-                                    </button>`;
+                                    </p>`;
             categoriesList.push(categoryButton);
         });
         
@@ -345,11 +352,8 @@ function tagAndCategoryHandler(product) {
     const tagAndCategoryDiv = document.querySelector(".tag-section");
     const tagString = tagHandler(product.tags);
     const categoryString = categoryButtonHandler(product.categories);
-    const tagsH2 = `<h2>
-                        Tags:
-                    </h2>`;
 
-    let combinedTagString = tagsH2 + tagString + categoryString;
+    let combinedTagString = tagString + categoryString;
 
     tagAndCategoryDiv.innerHTML = combinedTagString;
 }
@@ -421,14 +425,6 @@ addToCartLink.addEventListener("click", (event) => {
     addItemToCart(productQuantity);
 });
 
-
-// Can't get this to work.
-// Handle when the images in image-line are clicked
-const imgLineImages = document.querySelectorAll(".image-line img");
-
-imgLineImages.forEach(image => {
-    image.addEventListener("click", imageSpotlightHandler);
-});
 
 // Make the quantity '+' and '-' buttons decrease and increase the value
 const plusQuantityButton = document.querySelector(".fa-plus");

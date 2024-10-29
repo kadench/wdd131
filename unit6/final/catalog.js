@@ -12,7 +12,7 @@ const productCatalog = {
                 with advanced moisture-wicking fabric to keep you sweat-free during intense 
                 activities. The soft, lightweight material offers flexibility while maintaining 
                 warmth. Perfect for layering or wearing on its own during cooler weather.`,
-            imgPath: "images/mens_active_hoodie/hoodie_front.png",
+            imgPath: "images/mens_active_hoodie/hoodie_front.webp",
             imgAlt: "a man faces forward wearing a black sport tek hoodie that has the store logo on it",
             categories: ["hoodie", "moisture-wicking", "men's activewear", "pullover"],
             shortDescription: "Moisture-wicking pullover hoodie for active use.",
@@ -40,7 +40,7 @@ const productCatalog = {
                 Whether you're pushing through an intense workout or enjoying outdoor 
                 activities, this shirt offers lightweight comfort and dries quickly, making 
                 it a perfect fit for your active lifestyle.`,
-            imgPath: "images/womens_active_t/tee_front.png",
+            imgPath: "images/womens_active_t/tee_front.webp",
             imgAlt: "a woman faces forward wearing a black cool dry shirt that has the store logo on it",
             categories: ["t-shirt", "moisture-wicking", "women's activewear", "cool-dri"],
             shortDescription: "Quick-drying, lightweight active shirt for women.",
@@ -67,7 +67,7 @@ const productCatalog = {
                 fit and feel with its soft fleece material, making it perfect for layering 
                 or wearing casually. Whether you're lounging or staying active, this 
                 sweatshirt is designed to provide warmth and comfort throughout the day.`,
-            imgPath: "images/mens_sweat_shirt/sweatshirt_front.png",
+            imgPath: "images/mens_sweat_shirt/sweatshirt_front.webp",
             imgAlt: "a man faces forward wearing a black sweatshirt that has the store logo on it",
             categories: ["sweatshirt", "crewneck", "casual", "layering"],
             shortDescription: "Casual fleece crewneck sweatshirt for layering.",
@@ -95,7 +95,7 @@ const productCatalog = {
                 with advanced moisture-wicking fabric to keep you sweat-free during intense 
                 activities. The soft, lightweight material offers flexibility while maintaining 
                 warmth. Perfect for layering or wearing on its own during cooler weather.`,
-            imgPath: "images/mens_active_hoodie/hoodie_front.png",
+            imgPath: "images/mens_active_hoodie/hoodie_front.webp",
             imgAlt: "a man faces forward wearing a black sport tek hoodie that has the store logo on it",
             categories: ["hoodie", "moisture-wicking", "men's activewear", "pullover"],
             shortDescription: "Moisture-wicking pullover hoodie for active use.",
@@ -123,7 +123,7 @@ const productCatalog = {
                 Whether you're pushing through an intense workout or enjoying outdoor 
                 activities, this shirt offers lightweight comfort and dries quickly, making 
                 it a perfect fit for your active lifestyle.`,
-            imgPath: "images/womens_active_t/tee_front.png",
+            imgPath: "images/womens_active_t/tee_front.webp",
             imgAlt: "a woman faces forward wearing a black cool dry shirt that has the store logo on it",
             categories: ["t-shirt", "moisture-wicking", "women's activewear", "cool-dri"],
             shortDescription: "Quick-drying, lightweight active shirt for women.",
@@ -150,7 +150,7 @@ const productCatalog = {
                 fit and feel with its soft fleece material, making it perfect for layering 
                 or wearing casually. Whether you're lounging or staying active, this 
                 sweatshirt is designed to provide warmth and comfort throughout the day.`,
-            imgPath: "images/mens_sweat_shirt/sweatshirt_front.png",
+            imgPath: "images/mens_sweat_shirt/sweatshirt_front.webp",
             imgAlt: "a man faces forward wearing a black sweatshirt that has the store logo on it",
             categories: ["sweatshirt", "crewneck", "casual", "layering"],
             shortDescription: "Casual fleece crewneck sweatshirt for layering.",

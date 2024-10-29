@@ -74,7 +74,7 @@
     </header>
     <main>
         <a class="go-back" href="index.html">
-            <span class="fa fa-chevron-left close-form" aria-label="go back to catalog page"></span>
+            <span class="fa fa-chevron-left close-form"></span>
             <p class="back-text">go back</p>
         </a>
         <article class="product-container">
@@ -96,6 +96,9 @@
                         <div class="product-price">
                             </div>
                         </div>
+                        <h2 class="tag-title">
+                            Tags
+                        </h2>
                         <div class="tag-section">
                             <div class="all-tag-and-category-section">
                             </div>
@@ -110,6 +113,7 @@
                 
                 <form action="#">
                     <section class="button-input-wlabel">
+                        <h2>Size: unset</h2>
                         <div class="button-grid">
                             <button class="size-button" type="button">XS</button>
                             <button class="size-button" type="button">S</button>
@@ -118,16 +122,19 @@
                             <button class="size-button" type="button">XL</button>
                             <button class="size-button" type="button">2X</button>
                         </div>
-                        <h2>Size: unset</h2>
                     </section>
 
                     
                     <section class="quantity-cart">
                         <div class="quantity-bar">
-                            <label class="quantity-label" for="itemQuantity">quantity</label>
-                            <button class="fa-solid fa-minus" type="button" aria-label="decrease product quantity"></button>
-                            <input id="itemQuantity" type="number" class="quantity-input" min="1" value="1">
-                            <button class="fa-solid fa-plus" type="button" aria-label="increase product quantity"></button>
+                            <div class="quantity-label">
+                                <label for="itemQuantity">quantity</label>
+                            </div>
+                            <div class="flex-right-left">
+                                <button class="fa-solid fa-minus" type="button" aria-label="decrease product quantity"></button>
+                                <input id="itemQuantity" type="number" class="quantity-input" min="1" value="1">
+                                <button class="fa-solid fa-plus" type="button" aria-label="increase product quantity"></button>
+                            </div>
                         </div>
                         <button class="add-to-cart" data-add-to-cart="" type="button" aria-label="Add this product to your cart">
                             add to cart

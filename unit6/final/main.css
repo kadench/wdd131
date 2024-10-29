@@ -460,7 +460,7 @@ main {
 }
 
 .discount-percentage {
-  background-color: var(--secondary-color);
+  background-color: #1E5D55;
   color: #F2F2F2;
   padding: .24em;
   margin-left: .5em;
@@ -470,7 +470,7 @@ main {
 .discounted-price {
   align-self: center;
   font-size: .6em;
-  color: var(--secondary-color);
+  color: #1E5D55 ;
   margin-left: .4em;
 }
 
@@ -538,32 +538,32 @@ main {
 }
 
 [data-tag="best-seller"] {
-  background-color: #D06F3A;
+  background-color: #884705;
   color: #F2F2F2;
 }
 
 [data-tag="best-seller"]:hover {
-  background-color: #B25F31;
+  background-color: #692e04;
   cursor: pointer;
 }
 
 [data-tag="sale"] {
-  background-color: #A63D40;
+  background-color: #1E5D55;
   color: #F2F2F2;
 }
 
 [data-tag="sale"]:hover {
-  background-color: #862F32;
+  background-color: #164239;
   cursor: pointer;
 }
 
 [data-tag="new-arrival"] {
-    background-color: var(--accent1-color);
-    color: var(--primary-color);
+    background-color: #1F4E8F;
+    color: var(--accent2-color);
 }
 
 [data-tag="new-arrival"]:hover {
-    background-color: #C99F52;
+    background-color: #194073;
     cursor: pointer;
 }
 
@@ -735,7 +735,7 @@ footer {
 
   .side-title {
     font-size: 2em;
-    width: 20%;
+    width: 100%;
   }
 
   h1 img {
