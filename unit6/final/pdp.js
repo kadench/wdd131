@@ -299,7 +299,9 @@ function adjustQuantity(isIncreasing) {
 
     if (isIncreasing) {
         quantityValue++;
-    } else if (quantityValue > 1) {
+    }
+    
+    else if (quantityValue > 1) {
         quantityValue--;
     }
     
@@ -368,7 +370,8 @@ function sizeButtonAvailability(product) {
             button.classList.add("disabled");
             button.disabled = true;
             button.setAttribute("title", `${button.textContent} is out of stock`);
-        } else {
+        }
+        else {
             button.disabled = false;
             button.removeAttribute("title");
             button.addEventListener("click", (event) => handleSizeButtonClick(event, sizeButtonList));
@@ -383,21 +386,109 @@ function handleSizeButtonClick(event, sizeButtonList) {
     if (clickedButton.classList.contains("chosen")) {
         clickedButton.classList.remove("chosen");
         clickedSizeTitle.textContent = "Size: unset";
-    } else {
+    }
+    else {
         sizeButtonList.forEach(button => button.classList.remove("chosen"));
         clickedButton.classList.add("chosen");
         clickedSizeTitle.textContent = `Size: ${clickedButton.textContent}`;
     }
 }
 
-function submitHandler(event) {
-    const quantityItem = event.target;
-    const quantity = parseInt(event.target.value);
+function submitHandler() {
+    const quantity = parseInt(document.getElementById("itemQuantity").value);
+    const messageSection = document.getElementById("errorMessage");
+    const buttonsSection = document.querySelectorAll(".size-button");
+    
+    let isButtonChosen = false;
+    let chosenButton = '';
 
-    if (quantity > 10) {
-        preventDefault();
-        quantityItem.classList.toggle("disabled")
+    // Check if a button has been chosen
+    buttonsSection.forEach(button => {
+        if (button.classList.contains("chosen")) {
+            isButtonChosen = true;
+            chosenButton = button;
+        }
+    });
+
+    if (quantity <= 10 && isButtonChosen) {
+        addItemToCart(quantity);
+        errorHandler(quantity, 'success');
+
+        const returnedMessageTitle = document.querySelector(".error-title").textContent;
+        if (returnedMessageTitle === "ERROR!") {
+            messageSection.classList.remove("success");
+            messageSection.classList.add("error");
+        }
+        else if (returnedMessageTitle === "SUCCESS!")
+            messageSection.classList.remove("error");
+            messageSection.classList.add("success");
     }
+
+    else if (!isButtonChosen) {
+        errorHandler(quantity, 'notSize');
+        messageSection.classList.remove("success");
+        messageSection.classList.add("error");
+
+    }
+
+    else {
+        errorHandler(quantity, 'quantityError');
+        messageSection.classList.remove("success");
+        messageSection.classList.add("error");
+    }
+
+    // Clear the contents of the div after 3.2 seconds
+    setTimeout(() => {
+        messageSection.classList = "";
+        messageSection.classList.add("hidden");
+    }, 3200);
+}
+
+function errorHandler(quantity, trigger) {
+    const errorSection = document.getElementById("errorMessage");
+    const goodTitle = 'SUCCESS!'
+    
+    const badTitle = 'ERROR!'
+    const quantityError = `No more than 10 items can be added to your cart at a time!`;
+    const notSize = 'Please pick a product size!'
+    
+    let goodMessage = '';
+
+    if (quantity === 1) {
+        goodMessage = `${quantity} item been added to your cart successfully!`;
+    }
+
+    else {
+        goodMessage = `${quantity} items been added to your cart successfully!`;
+    }
+
+    let chosenTitle = '';
+    let chosenMessage = '';
+
+    if (trigger === 'success') {
+        chosenTitle = goodTitle;
+        chosenMessage = goodMessage;
+    }
+    else if (trigger === "quantityError") {
+        chosenTitle = badTitle;
+        chosenMessage = quantityError;
+    }
+    else if (trigger === "notSize") {
+        chosenTitle = badTitle;
+        chosenMessage = notSize;
+
+    }
+    
+    let errorString = `<h3 class="error-title">
+                            ${chosenTitle}
+                        </h3>
+                        <p class="error-desc">
+                            ${chosenMessage}
+                        </p>`;
+    
+    errorSection.innerHTML = errorString;
+    errorSection.classList.remove("hidden");
+
 }
 
 // Define all resize events
@@ -417,12 +508,10 @@ hamburgerIcon.addEventListener("click", toggleMobileMenu);
 hamburgerIcon.addEventListener("touch", toggleMobileMenu);
 
 // Make the add to cart button actually add a number to cart
-const addToCartLink = document.querySelector("[data-add-to-cart]");
-
-addToCartLink.addEventListener("click", (event) => {
-    const productQuantity = document.getElementById("itemQuantity").value;
+const cartForm = document.getElementById("cartForm");
+cartForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    addItemToCart(productQuantity);
+    submitHandler();
 });
 
 
@@ -433,8 +522,4 @@ const minusQuantityButton = document.querySelector(".fa-minus");
 plusQuantityButton.addEventListener("click", () => adjustQuantity(true));
 minusQuantityButton.addEventListener("click", () => adjustQuantity(false));
 
-// Make an add to cart submit handler
-const addCartButton = document.querySelector(".add-to-cart");
-
-addCartButton.addEventListener("submit", submitHandler);
 

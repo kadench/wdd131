@@ -111,7 +111,7 @@
                     </p>
                 </div>
                 
-                <form action="#">
+                <form id="cartForm" action="#">
                     <section class="button-input-wlabel">
                         <h2>Size: unset</h2>
                         <div class="button-grid">
@@ -136,11 +136,13 @@
                                 <button class="fa-solid fa-plus" type="button" aria-label="increase product quantity"></button>
                             </div>
                         </div>
-                        <button class="add-to-cart" data-add-to-cart="" type="button" aria-label="Add this product to your cart">
+                        <button class="add-to-cart" data-add-to-cart="" type="submit" aria-label="Add this product to your cart">
                             add to cart
                         </button>
                     </section>
                 </form>
+                <section id="errorMessage" class="hidden">
+                </section>
             </div>
         </article>        
     </main>
